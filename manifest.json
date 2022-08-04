@@ -1,0 +1,19 @@
+{
+  "name": "Suisse Associate",
+  "short_name": "Suisse Associate",
+  "start_url": "https://suisse.konnectjob.com/app/login",
+  "orientation" : "portrait",
+    "display" : "standalone",
+  "background_color": "#4473C5",
+  "theme_color": "#4473C5",
+  "icons": [{
+    "src": "./assets/images/icon.png",
+    "sizes": "192x192",
+    "type": "image/png"
+    },
+       {
+    "src": "./assets/images/rsz_icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+    }]
+}

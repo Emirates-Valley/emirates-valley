@@ -1,0 +1,107 @@
+
+.skills-percentage {
+    display: inline-block;
+    width: 100%;
+}
+.skills-percentage .progress {
+    width: 75%;
+}
+.third-progress .progress {
+    height: 4px;
+    overflow: visible;
+    background: #f0f0f0;
+    margin-bottom: 40px;
+}
+.third-progress .progressbar-title {
+    font-size: 14px;
+    color: #848484;
+    text-transform: capitalize;
+}
+.progress {
+    background-image: -webkit-linear-gradient(top, #ebebeb 0, #f5f5f5 100%);
+    background-image: -o-linear-gradient(top, #ebebeb 0, #f5f5f5 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), to(#f5f5f5));
+    background-image: linear-gradient(to bottom, #ebebeb 0, #f5f5f5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff5f5f5', GradientType=0);
+    background-repeat: repeat-x;
+    height: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+}
+.progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #337ab7;
+    -webkit-box-shadow: inset 0 -1px 0 rgb(0 0 0 / 15%);
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 15%);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+    background-image: -webkit-linear-gradient(top, #337ab7 0, #286090 100%);
+    background-image: -o-linear-gradient(top, #337ab7 0, #286090 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#286090));
+    background-image: linear-gradient(to bottom, #337ab7 0, #286090 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff286090', GradientType=0);
+    background-repeat: repeat-x;
+}
+.third-progress .progress .progress-bar {
+    position: relative;
+    animation: animate-positive 2s;
+}
+.third-progress .progress .progress-icon {
+    width: 32px;
+    height: 32px;
+    line-height: 26px;
+    border-radius: 50%;
+    font-size: 14px;
+    position: absolute;
+    top: -15px;
+    right: 0;
+    background: #fff;
+    border-width: 3px;
+    border-style: solid;
+}
+.third-progress .progress-value {
+    font-size: 14px;
+    color: #848484;
+    position: absolute; 
+    top: 16px;
+    right: 0;
+}
+.profile-container .profile-menu ul li a {
+    color: #444;
+}
+.profile-container {
+    background-color: #fff;
+	height: auto
+}
+
+.profile-container h4, .profile-container small {
+    color: #000;
+}
+.avatar.avatar-lg {
+    height: 6.5rem;
+    width: 6.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

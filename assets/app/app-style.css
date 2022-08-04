@@ -1,0 +1,382 @@
+body{
+  padding: 0px;
+  margin: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#login_box{
+  margin-top: 80px;
+  text-align: center;
+  background:rgba(255,255,255,0.7);
+  padding: 50px 25px 50px 25px;
+  border-radius: 50px 0px 50px 0px;
+}
+
+#login_box h1{
+  margin: 0px;
+  margin-bottom: 20px;
+  background: rgba(255,255,255,0.5);
+  border: 1px solid blue;
+  padding: 10px;
+  font-weight: 500;
+  color: blue;
+  border-radius: 50px;
+}
+
+#login_btn{
+  border-radius: 50px;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 0px;
+  padding: 20px;
+}
+#username , #password{
+  border-radius: 50px;
+  padding: 20px;
+}
+
+/* side_navbar*/
+#side_navbar {
+    background: #101010;
+    padding: 0px;
+    display: inline-block;
+    width: 100%;
+}
+.btn-group>.btn:first-child {
+    margin-left: 0;
+    background: transparent;
+}
+.navbar-nav li button.btn.btn-secondary.btn-lg.dropdown-toggle {
+    width: 64px;
+    float: left;
+    margin: 0 10px 0 0px;
+    border: 0;
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+}
+.navbar-collapse {
+    padding-left: 0;
+}
+.nav>li {
+    position: relative;
+    display: inline-block;
+}
+.nav>li .btn-group {
+    float: left;
+}
+.navbar-nav .open .dropdown-menu {
+    position: absolute;
+    width: auto;
+    margin-top: 0;
+    background-color: #eee;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    left: 15px;
+    right: 0;
+}
+h2 {
+    margin-top: 0px;
+}
+.h1, h1, h3 {
+    margin-top: 00px;
+}
+ul.nav.navbar-nav.navbar-right {
+    float: right;
+    margin: 0 0 0 0;
+    position: absolute;
+    right: 0;
+    top: auto;
+    bottom: 0;
+}
+
+.navbar-nav li button.btn.btn-secondary.btn-lg.dropdown-toggle span.icon-bar {
+    background: white;
+    width: 30px;
+    height: 5px;
+    float: left;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+#meun_list{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+.fc-toolbar.fc-header-toolbar {
+    margin-bottom: 1.5em;
+    display: inline-block;
+}
+.fc-toolbar h2 {
+    font-size: 1.5em;
+    margin: 0;
+    margin-bottom: 12px;
+}
+.fc button {
+    font-size: 16px;
+}
+.fc-toolbar .fc-right {
+    float: left;
+}
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 0;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+#meun_list li a {
+  display: block;
+  width: 100% ;
+  padding:4px 10px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #9d9d9d;
+  font-weight: bold;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+
+}
+.collapse {
+    display: block;
+}
+.dropdown-menu {
+    min-width: 25rem;
+    padding:0;
+    margin: -1px 0 0 0;
+    font-size: 1rem;
+    color: #292b2c;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+}
+.navbar-nav {
+    display: inline-block;
+}
+
+#meun_list li a:hover {
+  background: #555555;
+  color: white;
+}
+
+
+
+#single_box{
+  background: #00cec9;
+  padding: 10px;
+  margin: 10px;
+  border: 5px solid black;
+}
+
+#single_box:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#single_box h2{
+  color: white;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+#single_box a{
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover{
+  background: #555555;
+  color: white;
+}
+.h2, h2 {
+    font-size: 27px;
+}
+.partner-logo img{
+  width: 500px;
+}
+td.app_images {
+    overflow: auto;
+}
+td.app_files {
+    overflow: auto;
+}
+td.s-icons {
+    width: 92px;
+    display: block;
+}
+.a2a_default_style a {
+    float: left;
+    line-height: 16px;
+    padding: 0 2px;
+    margin: 0 0 5px 0;
+}
+.app_images {
+    height: 100px;
+    overflow: auto;
+}
+.app_files {
+    height: 100px;
+    overflow: auto;
+    display: inline-block;
+    width: 100%;
+}
+.notes {
+    height: 90px;
+    overflow: auto;
+    width: 150px;
+}
+.a2a_kit.a2a_kit_size_32.a2a_default_style {
+    width: 75px;
+}
+.fc-row.fc-widget-header table tr th.fc-day-header.fc-widget-header span {
+    font-size: 16px;
+}
+.fc-ltr .fc-dayGrid-view .fc-day-top .fc-day-number {
+    float: right;
+    font-size: 16px;
+}
+.fc-toolbar.fc-header-toolbar .fc-center h2 {
+    font-size: 26px;
+    color: white;
+}
+div#main h3 {
+    font-size: 16px;
+    font-weight: normal;
+}
+.dot {
+    width: 13px;
+    height: 13px;
+    float: left;
+    border-radius: 100%;
+    margin: 1px 5px 0 0px;
+}
+.lineup {
+    float: left;
+    width: 100%;
+    margin: 0 0 10px 0;
+    color: white;
+}
+.dot.red {
+    background: red;
+}
+.dot.yellow {
+    background: yellow;
+}
+.dot.green {
+    background: green;
+}
+.dot.purple {
+    background: purple;
+}
+.dot.blue {
+    background: blue;
+}
+.ticket-list {
+    float: left;
+    width: 100%;
+    /*margin-bottom: 60px;*/
+    margin-top: 10px;
+    border-bottom: 1px solid #fff;
+    background: #fff;
+}
+.date-box {
+    float: left;
+    border-top: 15px solid #000;
+    text-transform: uppercase;
+    padding: 10px 0;
+    border-bottom: 1px solid #999;
+    width: 100%;
+    text-align: center;
+}
+#main .ticket-detail .date-box h3 {
+    line-height: normal;
+    margin: 0;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.date-box h1 {
+    line-height: normal;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    display: inline-block;
+}
+.ticket-detail {
+    float: left;
+    padding: 0;
+    border-radius: 0 5px 5px 0;
+    width: auto;
+}
+.ticket-detail i.fa {
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    float: left;
+    width: 20px;
+}
+.ticket-detail ul {
+    padding: 15px 0 0 0;
+    list-style: none;
+    float: left;
+    margin: 0 0 0 10px;
+    width: 100%;
+}
+.ticket-detail ul li {
+    list-style: none;
+    font-size: 16px;
+    margin: 0 0px 5px 0;
+}
+.fc-ltr .fc-dayGrid-view .fc-day-top .fc-day-number {
+    float: right;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 5px 5px 0 0px;
+    color: #fff;
+}
+.fc-row.fc-widget-header table tr th.fc-day-header.fc-widget-header span {
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 5px !important;
+}
+td.fc-day-top.fc-wed.fc-today span.fc-day-number {
+    color: #000;
+}
+.modal-dialog.pop-up .modal-body {
+    position: relative;
+    padding: 15px;
+    display: inline-block;
+    padding-top: 0;
+}
+.ticket-list.pop {
+    margin: 0;
+}
+
+@media only screen and (max-width: 767px) {
+.partner-logo img{
+  width: 100%;
+} 
+.empty-space {
+    height: 110px;
+}
+li.dash-heading {
+    width: 100%;
+    margin-bottom: -5px;
+    margin-top: 0;
+}
+li.dash-heading h4 {
+    margin-bottom: -5px;
+    margin-top: 0;
+}
+}

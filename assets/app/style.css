@@ -1,0 +1,327 @@
+body{
+  padding:0px;
+  margin:0px;
+  background: #4473C5;
+}
+.upload label.btn.btn-success.form-control {
+    position: absolute;
+    width:94%;
+}
+.uploading {
+    display: inline-block;
+    margin-bottom: 45px;
+}
+.main-tabs {
+    width: 310px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+.buttons {
+    text-align: left;
+    width: 100%;
+    margin: 0 auto;
+}
+.loading img#logo {
+    margin: 0;
+}
+.loading {
+    display: table-cell;
+    vertical-align: bottom;
+}
+/* -----------------Key Login Page ----------- */
+@media only screen and (max-width: 1023px) {
+    
+
+   body , html {
+           margin: 0px;
+           padding: 0px;
+           background-color:#4473C5;
+      }
+      .empty-space {
+    width: 100%;
+    display: inline-block;
+    height: 50px;
+}
+a.btn.btn-default.form-control {
+    z-index: 9999;
+}
+.form-group a.btn.btn-default.btn-block {
+    text-align: center;
+    padding: 5px 5px;
+}
+.rating span i {
+    font-size: 22px;
+}
+    .rating span {
+    width: 49%;
+    display: inline-block;
+    text-align: left;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+.rating h5 {
+    display: inline-block;
+    font-size: 20px;
+}
+span.comments-box {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    margin: 0px 0px 10px;
+}
+.rating .modal-header .close span {
+    font-size: 30px;
+}
+       
+.dot {
+    width: 13px;
+    height: 13px;
+    float: left;
+    border-radius: 100%;
+    margin: 1px 5px 0 0px;
+}
+.lineup {
+    float: left;
+    width: 100%;
+    margin: 0 0 10px 0;
+    color: white;
+    font-size: 14px;
+}
+.dot.red {
+    background: red;
+}
+.dot.yellow {
+    background: yellow;
+}
+.dot.green {
+    background: green;
+}
+.dot.purple {
+    background: purple;
+}
+.dot.blue {
+    background: blue;
+}
+.ticket-list {
+    float: left;
+    width: 100%;
+    /*margin-bottom: 60px;*/
+    margin-top: 10px;
+    border-bottom: 1px solid #fff;
+    background: #fff;
+}
+.date-box {
+    float: left;
+    border-top: 15px solid #000;
+    text-transform: uppercase;
+    padding: 10px 0;
+    border-bottom: 1px solid #999;
+    width: 100%;
+    text-align: center;
+}
+#main .ticket-detail .date-box h3 {
+    line-height: normal;
+    margin: 0;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.date-box h1 {
+    line-height: normal;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    display: inline-block;
+}
+.ticket-detail {
+    float: left;
+    padding: 0;
+    border-radius: 0 5px 5px 0;
+    width: auto;
+}
+.ticket-detail i.fa {
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    float: left;
+    width: 20px;
+}
+.ticket-detail ul {
+    padding: 15px 0 0 0;
+    list-style: none;
+    float: left;
+    margin: 0 0 0 10px;
+    width: 100%;
+}
+
+.ticket-detail ul li {
+    list-style: none;
+    font-size: 16px;
+    margin: 0 0px 5px 0;
+}
+
+.fc-ltr .fc-dayGrid-view .fc-day-top .fc-day-number {
+    float: right;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 5px 5px 0 0px;
+    color: #fff;
+}
+
+.fc-row.fc-widget-header table tr th.fc-day-header.fc-widget-header span {
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 5px !important;
+}
+td.fc-day-top.fc-wed.fc-today span.fc-day-number {
+    color: #000;
+}
+.modal-dialog.pop-up .modal-body {
+    position: relative;
+    padding: 15px;
+    display: inline-block;
+    padding-top: 0;
+}
+.ticket-list.pop {
+    margin: 0;
+}
+div#main h3 {
+    display: inline-block;
+}
+.fc-toolbar {
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+}
+.fc-toolbar .fc-right {
+    float: left;
+}
+.fc-center h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+.fc-center h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    margin: 0 0px 15px 0;
+    display: inline-block;
+}
+div#loading_box {
+    position: fixed;
+    z-index: 1;
+    vertical-align: bottom;
+        padding-top: 50%;
+}
+      #key_input{
+          display: block;
+          width: 250px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 70px;
+          padding: 10px;
+          border: 0px;
+          border-radius: 50px;
+      }
+      #key_input:focus{
+        outline: none;
+        border: 2px solid blue;
+      }
+
+      #btn{
+          display: block;
+          width: 150px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 15px;
+          padding: 10px;
+          border: 0px;
+          border-radius: 25px;
+          background: white;
+          columns: black;
+          font-size: 20px;
+      }
+
+      #logo{
+          display: block;
+          width: 200px;
+          height: 100px;
+          margin-top: 130px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      #message{
+        text-align: center;
+        color: white;
+        margin-top: 30px;
+      }
+#send_btn {
+    border-radius: 5px !important;
+    margin-bottom: 50px;
+}
+button.btn.btn-default.ticket_status img {
+    width: 18px;
+    margin: 0px 5px 0 0px;
+}
+button.btn.btn-default.ticket_status {
+    margin: 10px 5px 0 0px;
+    padding: 6px;
+}
+form.form-btn {
+    margin-top: 5px;
+}
+
+     }
+/* ----------------------------------  */
+
+
+/* ------------------- Main Tabes ----------------- */
+@media only screen and (max-width: 1023px) {
+
+        #screen_title{
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        #tech_photo{
+            margin-top:5px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .tab_btn{
+          border: 0px;
+          margin: 10px;
+          width: 80px;
+        }
+
+    }
+
+/* ---------------- logout page ------------------ */
+@media only screen and (max-width: 1023px) {
+    .bottom-btn {
+    text-align: center;
+}
+
+        /* #logo{
+            display: block;
+            width: 200px;
+            height: 100px;
+            margin-top: 250px;
+            margin-left: auto;
+            margin-right: auto;
+        } */
+
+		#msg{
+		  color: white;
+		  font-size:20px;
+		  text-align:center;
+		  margin-top:30px;
+		  font-weight:500;
+		}
+   }

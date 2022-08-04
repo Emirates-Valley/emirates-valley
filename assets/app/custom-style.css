@@ -1,0 +1,400 @@
+.skills-percentage {
+    display: inline-block;
+    width: 100%;
+}
+.skills-percentage .progress {
+    width: 75%;
+}
+.third-progress .progress {
+    height: 4px;
+    overflow: visible;
+    background: #f0f0f0;
+    margin-bottom: 40px;
+}
+.third-progress .progressbar-title {
+    font-size: 14px;
+    color: #848484;
+    text-transform: capitalize;
+}
+.progress {
+    background-image: -webkit-linear-gradient(top, #ebebeb 0, #f5f5f5 100%);
+    background-image: -o-linear-gradient(top, #ebebeb 0, #f5f5f5 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), to(#f5f5f5));
+    background-image: linear-gradient(to bottom, #ebebeb 0, #f5f5f5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff5f5f5', GradientType=0);
+    background-repeat: repeat-x;
+    height: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+}
+.progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #337ab7;
+    -webkit-box-shadow: inset 0 -1px 0 rgb(0 0 0 / 15%);
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 15%);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+    background-image: -webkit-linear-gradient(top, #337ab7 0, #286090 100%);
+    background-image: -o-linear-gradient(top, #337ab7 0, #286090 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#286090));
+    background-image: linear-gradient(to bottom, #337ab7 0, #286090 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff286090', GradientType=0);
+    background-repeat: repeat-x;
+}
+.third-progress .progress .progress-bar {
+    position: relative;
+    animation: animate-positive 2s;
+}
+.third-progress .progress .progress-icon {
+    width: 32px;
+    height: 32px;
+    line-height: 26px;
+    border-radius: 50%;
+    font-size: 14px;
+    position: absolute;
+    top: -15px;
+    right: 0;
+    background: #fff;
+    border-width: 3px;
+    border-style: solid;
+}
+.third-progress .progress-value {
+    font-size: 14px;
+    color: #848484;
+    position: absolute;
+    top: 16px;
+    right: 0;
+}
+.profile-container .profile-menu ul li a {
+    color: #444;
+}
+.profile-container {
+    background-color: #fff;
+	height: auto
+}
+
+.profile-container h4, .profile-container small {
+    color: #000;
+}
+.avatar.avatar-lg {
+    height: 6.5rem;
+    width: 6.5rem;
+}
+.video label {
+    display: inline-block;
+    margin-bottom: 0;
+    width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+}
+.video {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+.video a {
+    background: no-repeat;
+    width: 100%;
+    text-align: left;
+    padding: 0 0;
+    text-decoration: underline;
+    color: #ff3e6c;
+    font-weight: 500;
+    margin-bottom: 0;
+    display: inline-block;
+}
+.send-email .input-group {
+    margin-bottom: 10px;
+}
+.header-logo img.logo {
+    width: 80%;
+}
+.appointments {
+    display: grid;
+    grid-template-columns: 80px auto;
+}
+.appointments .date-time {
+    border-left: 0;
+    font-weight: 700;
+    background-color: #ebebeb;
+    color: #505050;
+    text-align: center;
+    width: 66px;
+    display: inline-block;
+    height: 80px;
+}
+.appointments .date-time span {
+    width: 100%;
+    display: inline-block;
+}
+.appointments .date-time span.sr{
+	font-size: 10px;
+    line-height: 10px;
+}
+
+.appointments .date-time span.date {
+    font-size: 33px;
+    line-height: 33px;
+}
+
+._2kQi_utFI2C-3mdEKIdDw6 {
+    color: #4f4f4f;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 18px;
+    width: 100%;
+    font-size: 12px;
+    padding: 5px 15px 5px 0;
+}
+._2kQi_utFI2C-3mdEKIdDw6 ._14n0XxJEWXiCRuH49-8Pr7 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+._2kQi_utFI2C-3mdEKIdDw6 .SVGInline {
+    fill: currentColor;
+    display: inline-block;
+    min-width: 20px;
+    width: 20px;
+    text-align: center;
+    margin-right: 7px;
+}
+._2kQi_utFI2C-3mdEKIdDw6 .SVGInline svg {
+    width: 20px;
+    height: 20px;
+}
+.user-info {
+    display: inline-block;
+    width: 100%;
+    background: #6A7DE5;
+    padding: 5px 10px;
+	border-bottom: 1px solid #ccc
+}
+.user-info .emp-pic {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 100%;
+    margin: 0 10px 0 0px;
+}
+.user-info .emp-pic img {
+    width: 100%;
+    display: inline-block;
+	border-radius: 100%;
+}
+.emp-name {
+    display: inline-block;
+}
+.emp-name h4 {
+    margin: 0;
+    color: #fff;
+}
+#external-events {
+    flex: 50%;
+    flex-wrap: wrap;
+}
+ul.task {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 30px;
+}
+ul.task li {
+    font-size: 16px;
+    border-bottom: 1px solid #999;
+    padding: 10px 0;
+}
+ul.task li a {
+    width: 100%;
+    display: inline-block;
+}
+.layout-wrapper .content-wrapper > .content-body > .content label {
+    width: 100%;
+}
+body.web-app .layout-wrapper .content-wrapper > .content-body > .content button.btn {
+    width: 100%;
+    display: inline-block;
+}
+#logo {
+    text-align: center;
+}
+body.form-membership .form-wrapper {
+    margin: 0px auto;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 25px;
+    color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.copyright a {
+    color: white;
+}
+body.form-membership {
+    padding: 3rem 0 1rem;
+    overflow: auto;
+}
+body.form-membership {
+    background: url(../media/image/bg.png) no-repeat;
+    width: 100%;
+    background-attachment: fixed;
+    height: 100%;
+    background-size: cover;
+}
+body.form-membership .form-wrapper {
+    background-color: rgba(255, 255, 255,.7);
+    box-shadow: 0 3px 10px rgb(255 255 255 / 50%);
+    padding: 3rem;
+    border-radius: 0.5rem;
+    width: 430px;
+    margin: 20px auto;
+    text-align: center;
+}
+#external-events .fc-event {
+    border: none;
+    background: none;
+    color: #646464;
+    font-size: 14px;
+    cursor: move;
+    margin: 0 20px 0 0px;
+    padding: 0.5rem 1.5rem;
+}
+.remittance .video {
+    border: 0;
+    padding: 0 15px;
+}
+.card-body button.btn {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+ul.earn-detail {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+.items {
+    width: 100%;
+    margin-bottom: 5px;
+}
+.items i {
+    width: 24px;
+    text-align: center;
+    font-size: 20px;
+}
+li.appointments {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+/* Style the tab */
+.tab {
+    float: left;
+    /* border: 1px solid #ccc; */
+    width: 30%;
+    height: 300px;
+    border-left: 0;
+    border-right: 1px solid #ccc;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 15px 10px;
+    width: 100%;
+    border: none;
+    background: #fff;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #eee;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    border: 033;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    padding: 30px 45px;
+    text-align: center;
+}
+.tab button h5 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.tab button span {
+    font-size: 12px;
+	color: #4f4f4f
+}
+.tab button p {
+    font-size: 12px;
+    color: #b2b2b2;
+    margin: 0;
+}
+.tabcontent small {
+    width: 100%;
+    display: inline-block;
+}
+.tabcontent button.btn.btn-primary.btn-sm {
+    width: auto;
+    margin: 15px auto 0;
+}
+.rating-stars.text-center ul {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+.layout-wrapper .card-body .content.clearfix {
+    padding: 0px !important;
+}
+.modal-body header.header.text-center h2 {margin: 0;font-size: 18px;text-align: left;}
+.rating-stars ul {list-style-type:none;padding:0;-moz-user-select:none;-webkit-user-select:none;}
+.rating-stars ul > li.star {display:inline-block;}
+.rating-stars ul > li.star > i.fa {font-size: 30px; color: #ccc;float: left; margin-top: 0; width: 100%;text-align: center;}
+.rating-stars ul > li.star.hover > i.fa {color:#FFCC36;}
+.rating-stars ul > li.star.selected > i.fa {color:#FF912C;}
+.rating-stars ul > li.star {display: inline-block;width: 18%;text-align: center;margin: 0 0 10px 0;float: left;}
+#signature{width: 100%;height: auto;border: 1px solid #c4c4c4;margin-top:20px;}
+@media screen and (max-width: 767px) {
+	ul.task {
+		grid-template-columns: auto ;
+		grid-column-gap: 0;
+	}
+	body.form-membership .form-wrapper {
+    
+    width: 90%;
+    text-align: center;
+}
+}
+
+
