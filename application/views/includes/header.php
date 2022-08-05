@@ -25,22 +25,14 @@
     <script src="<?php echo base_url()?>resource/vendors/bundle.js"></script>
 </head>
 <?php 
-//   $userInfo = userInfo($this->session->userdata['EMIRATES']['userId']);
-//   if($userInfo->link != ''){
-//     $link = $userInfo->link;
-//     $target = 'target="_blank"';
-//   } else {
-//     $link = base_url().'admin/dashboard';
-//     $target = '';
-//   }
-//   if($userInfo->profile_pic != ''){
-//     $profile_pic = base_url().'resource/images/user_images/'.$userInfo->profile_pic;
-//   } else {
-//     $profile_pic = base_url().'assets/media/image/user/man_avatar3.jpg';
-//   }
-$profile_pic = base_url().'assets/media/image/user/man_avatar3.jpg';
+  $userInfo = userInfo($this->session->userdata['EMIRATES']['userId']);
+  if($userInfo->user_image != ''){
+    $profile_pic = base_url().'resource/images/user_images/'.$userInfo->user_image;
+  } else {
+    $profile_pic = base_url().'assets/media/image/user/man_avatar3.jpg';
+  }
 ?>
-<body class="hidden-navigation">
+<body>
 <!-- Preloader -->
 <div class="preloader">
     <div class="preloader-icon"></div>
@@ -60,11 +52,11 @@ $profile_pic = base_url().'assets/media/image/user/man_avatar3.jpg';
                     </a>
                 </div>
 
-                <?php /* ?><div class="header-logo">
+                <div class="header-logo">
                     <a href="<?php echo $link?>" <?php echo $target?>>
-                        <img class="logo" style="width:150px" src="<?php echo $company_logo?>" alt="logo">
+                        <img class="logo" style="width:100px" src="<?php echo $profile_pic?>" alt="Emirates Logo">
                     </a>
-                </div><?php */ ?>
+                </div>
             </div>
 
             <div class="header-body">
@@ -139,317 +131,43 @@ $profile_pic = base_url().'assets/media/image/user/man_avatar3.jpg';
                     </li>
                     <li>
                         <a href="#">
-                            <span class="nav-link-icon">
-                            <i class="fa fa-users"></i>
-                            </span>
-                            <span>Staffs</span>
+                            <span class="fa fa-globe"></span>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;Website Frontend</span>
                         </a>
                         <ul>
                             <li>
-                                <a href="<?php echo base_url().'admin/staff/add_staff'?>">
-                                    <span>Add Staff</span>
-                                </a>
+                                <a href="#"><i class="fa fa-sliders"></i>&nbsp;Slider Management</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url().'admin/staff'?>">
-                                    <span>Manage Staff</span>
-                                </a>
+                                <a href="#"><i class="fa fa-picture-o"></i>&nbsp;Logo Management</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url().'admin/staff/registartion'?>">
-                                    <span>Staff Registration</span>
-                                </a>
+                                <a href="#"><i class="fa fa-video-camera"></i>&nbsp;Video Gallery Management</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-users"></i>&nbsp;Team Management</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-credit-card"></i>&nbsp;Payment Plan Management</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-newspaper-o"></i>&nbsp;News Management</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-quote-left"></i>&nbsp;Testimonial Management</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-bars"></i>&nbsp;Feature Management</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-address-book"></i>&nbsp;Contact Us Management</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-info-circle"></i>&nbsp;About Management</a>
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">
-                            <span class="nav-link-icon">
-                            <i class="fa fa-users"></i>
-                            </span>
-                            <span>Clients</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="<?php echo base_url().'admin/client/add_client'?>">
-                                    <span>Add Client</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/client'?>">
-                                    <span>Manage Client</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="nav-link-icon">
-                            <i class="fa fa-users"></i>
-                            </span>
-                            <span>Business Partners</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="<?php echo base_url().'admin/client/businesspartner'?>">
-                                    <span>Manage Business Partners</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/client/appointments'?>">
-                                    <span>Manage Appointments</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/client/partner-estimates'?>">
-                                    <span>Business Partner Estimates</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/client/nonpartner-estimates'?>">
-                                    <span>Non Business Partner Estimates</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="nav-link-icon">
-                            <i class="fa fa-product-hunt" aria-hidden="true"></i>
-                            </span>
-                            <span>Inventory</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="<?php echo base_url().'admin/inventory/add_inventory'?>">
-                                    <span>Add Product</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/inventory'?>">
-                                    <span>Manage Inventory</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="nav-link-icon">
-                            <i class="fa fa-calendar"></i>
-                            </span>
-                            <span>Appointments</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="<?php echo base_url().'admin/event/add_appointment?type=appointment'?>">
-                                    <span>Add Appointment</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/appointment'?>">
-                                    <span>Manage Appointment</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="nav-link-icon">
-                            <i class="fa fa-tasks"></i>
-                            </span>
-                            <span>Job Posting</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="<?php echo base_url().'admin/job/add_job'?>">
-                                    <span>Add Job</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/jobs'?>">
-                                    <span>Manage Jobs</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="nav-link-icon">
-                            <i class="fa fa-credit-card"></i>
-                            </span>
-                            <span>Subscription</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="<?php echo base_url().'admin/subscription/package'?>">
-                                    <span>Packages</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/jobs'?>">
-                                    <span>Manage Jobs</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="nav-link-icon">
-                            <i class="fa fa-tasks"></i>
-                            </span>
-                            <span>Manage Projects</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="<?php echo base_url().'admin/projects'?>">
-                                    <span>Manage Projects</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="nav-link-icon">
-                            <i class="fa fa-cog"></i>
-                            </span>
-                            <span>Admin Settings</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="<?php echo base_url().'admin/setting/manage_admin_users'?>">
-                                    <span>Manage Users</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/setting/manage_title'?>">
-                                    <span>Manage Title</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/setting/manage_sales_rep'?>">
-                                    <span>Manage Sales Rep</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/setting/shared_files'?>">
-                                    <span>Shared Files</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/setting/email_settings'?>">
-                                    <span>Email Settings</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/setting/email_templates'?>">
-                                    <span>Email Templates</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="nav-link-icon">
-                            <i class="fa fa-cog"></i>
-                            </span>
-                            <span>Applications</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="https://www.google.com/drive/" target="_blank">
-                                    <span>Google Drive</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://onedrive.live.com/about/en-us/signin/" target="_blank">
-                                    <span>One Drive</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://app.qbo.intuit.com/app/login" target="_blank">
-                                    <span>Quick Books</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.paychex.com/" target="_blank">
-                                    <span>Paychex Synchronization</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url().'admin/timesheet'?>">
-                            <span class="nav-link-icon">
-                                <i class="fa fa-clock-o"></i>
-                            </span>    
-                            <span>Timesheet</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url().'admin/livenotes'?>">
-                            <span class="nav-link-icon">
-                                <i class="fa fa-clock-o"></i>
-                            </span>    
-                            <span>Live Notes</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url().'admin/payroll'?>">
-                            <span class="nav-link-icon">
-                                <i class="fa fa-credit-card"></i>
-                            </span>    
-                            <span>Payroll</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="nav-link-icon">
-                            <i class="fa fa-trash"></i>
-                            </span>
-                            <span>Trash</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="<?php echo base_url().'admin/trash/staff-trash'?>">
-                                    <span>Staff Trash</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/trash/client-trash'?>">
-                                    <span>Client Trash</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/trash/inventory-trash'?>">
-                                    <span>Inventory Trash</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/trash/appointment-trash'?>">
-                                    <span>Appointment Trash</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/trash/timesheet-trash'?>">
-                                    <span>Timesheet Trash</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url().'admin/trash/payroll-trash'?>">
-                                    <span>Payroll Trash</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url().'admin/chat'?>">
-                            <span class="nav-link-icon">
-                                <i class="fa fa-comments-o"></i>
-                            </span>    
-                            <span>Chat System</span>
-                        </a>
-                    </li>
-                </ul>
+                </ul>    
             </div>
         </div>
         <!-- end::navigation -->

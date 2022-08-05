@@ -39,42 +39,10 @@ class Dashboard extends CI_Controller {
 	public function profile()
 	{
 		if($this->input->post('update_profile') == 'update_profile'){
-			if ( isset($_FILES['company_logo']) && !empty($_FILES['company_logo']['tmp_name']) ) {
-				$allowed_image_extension = array(
-					"png",
-					"jpg",
-					"jpeg",
-					"gif"
-				);
-				$file_extension = pathinfo($_FILES["company_logo"]["name"], PATHINFO_EXTENSION);
-				if (! in_array($file_extension, $allowed_image_extension)) {
-					$data['message_error'] = 'Only .jpg .jpeg .gif .png Format Allowed!';
-				}
-			}	
-			if(empty($_FILES['file']['company_logo'])){
-				$target_dir ="./resource/images/user_images";
-				$file_name = time();
-				$config['file_name'] = $file_name;
-				$config['upload_path'] = $target_dir;
-				$config['allowed_types'] = 'jpg|png|jpeg';
-				$this->load->library('upload', $config);
-				$this->upload->initialize($config);
-				if ($this->upload->do_upload('company_logo')){
-					$data = $this->upload->data();
-					$update = array(
-						'company_logo' => $data['file_name']
-					);
-					$this->db->where('userId',$this->userId);
-				 	$this->db->update('sussie_register',$update);
-					@unlink($target_dir.'/'.$this->input->post('oldcompanyfile')); 
-				} 
-			}
-			if($data['message_error'] == ''){
-				$updArr = array('name' => $this->input->post('company_name'), 'email' => $this->input->post('email'), 'username' => $this->input->post('username'), 'phone' => $this->input->post('phone'), 'street' => $this->input->post('street'), 'city' => $this->input->post('city'), 'state' => $this->input->post('state'), 'zip' => $this->input->post('zip'), 'headline_text' => $this->input->post('headline_text'), 'link' => $this->input->post('link'));
-				$this->db->where('userId',$this->userId);
-				$this->db->update('sussie_register',$updArr);
-				$data['message_success'] = 'Profile Successfully Updated!';
-			}
+			$updArr = array('full_name' => $this->input->post('full_name'), 'email' => $this->input->post('email'), 'username' => $this->input->post('username'), 'phone' => $this->input->post('phone'), 'country' => $this->input->post('country'), 'city' => $this->input->post('city'));
+			$this->db->where('userId',$this->userId);
+			$this->db->update('emiratesvalley_register',$updArr);
+			$data['message_success'] = 'Profile Successfully Updated!';
 		}
 		$data['user_record'] = $this->Home_model->get_user_record($this->userId);
 		$data['main_content'] = 'admin/profile';
@@ -91,7 +59,7 @@ class Dashboard extends CI_Controller {
 			$error = json_encode(array('status'=>'error','msg'=>'Please enter old password!'),true);
             exit($error);
 		} else {
-			$getPass = $this->db->select('userId')->from('sussie_register')->where('password',md5($oldpassword))->where('userId',$this->userId)->get();
+			$getPass = $this->db->select('userId')->from('emiratesvalley_register')->where('password',md5($oldpassword))->where('userId',$this->userId)->get();
 			if($getPass->num_rows() == '0'){
 				$error = json_encode(array('status'=>'error','msg'=>'Old password does not matched!'),true);
             	exit($error);
@@ -118,9 +86,9 @@ class Dashboard extends CI_Controller {
 			}
 		}
 
-		$updateArr = array('password' => md5($newpassword));
-		$this->db->where('userId',$this->session->userdata['SUISSE']['userId']);
-		$this->db->update('sussie_register',$updateArr);
+		$updateArr = array('password' => md5($newpassword), 'original_password' => $newpassword);
+		$this->db->where('userId',$this->session->userdata['EMIRATES']['userId']);
+		$this->db->update('emiratesvalley_register',$updateArr);
 		$success = json_encode(array('status'=>'success','msg'=>'Password updated successfully!'),true);
         exit($success);
 	}
@@ -133,9 +101,9 @@ class Dashboard extends CI_Controller {
 		$imgName = $this->input->post('imgName');
 		$target_dir ="./resource/images/user_images";
 		@unlink($target_dir.'/'.$imgName);
-		$this->db->set('profile_pic','');
+		$this->db->set('user_image','');
 		$this->db->where('userId',$userId);
-		$this->db->update('sussie_register');
+		$this->db->update('emiratesvalley_register');
 	}
 
 	public function upload_avatar(){
@@ -164,16 +132,16 @@ class Dashboard extends CI_Controller {
 			$this->load->library('upload', $config);
 			$this->upload->initialize($config);
 			if ($this->upload->do_upload('files')){
-				$getPic = $this->db->select('profile_pic')->from('sussie_register')->where('userId',$this->userId)->get()->row();
-				if($getPic->profile_pic != ''){
-					@unlink($target_dir.'/'.$getPic->profile_pic);
+				$getPic = $this->db->select('user_image')->from('emiratesvalley_register')->where('userId',$this->userId)->get()->row();
+				if($getPic->user_image != ''){
+					@unlink($target_dir.'/'.$getPic->user_image);
 				}
 				$data = $this->upload->data();
 				$update = array(
-					'profile_pic' => $data['file_name']
+					'user_image' => $data['file_name']
 				);
 				$this->db->where('userId',$this->userId);
-				$this->db->update('sussie_register',$update); 
+				$this->db->update('emiratesvalley_register',$update); 
 				$success = json_encode(array('status'=>'success','msg'=>base_url().'resource/images/user_images/'.$data['file_name']),true);
         		exit($success);
 			} 
