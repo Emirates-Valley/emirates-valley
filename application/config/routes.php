@@ -58,5 +58,13 @@ $route['admin/profile'] = 'Dashboard/profile';
 $route['admin/dashboard'] = 'Dashboard';
 /*****************ADMIN AREA END*************************/
 
+/*****************SLIDER AREA START*************************/
+$route['admin/slider/listing'] = 'Slider';
+$route['admin/slider/listing/(:num)'] = 'Slider';
+$route['admin/slider/add'] = 'Slider/add_slider';
+$route['admin/slider/edit/(:any)'] = 'Slider/edit_slider';
+$route['admin/slider/delete/(:any)'] = 'Slider/delete_slider';
+/*****************SLIDER AREA END**************************/
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

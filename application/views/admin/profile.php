@@ -147,8 +147,7 @@
                 </div>
             </div>
         </div>
-    </div>
-<script src="<?php echo base_url()?>assets/js/examples/toast.js"></script>    
+    </div>    
 <script>
     $('.save_password').on('click',function(){
         var formData = $(".userPassword").serialize();

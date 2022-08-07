@@ -17,12 +17,13 @@
 
     <!-- App css -->
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/app.min.css" type="text/css">
-
+    <link rel="stylesheet" href="<?php echo base_url()?>resource/vendors/select2/css/select2.min.css" type="text/css">
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="<?php echo base_url()?>resource/vendors/bundle.js"></script>
+    <script src="<?php echo base_url()?>assets/js/examples/toast.js"></script>
 </head>
 <?php 
   $userInfo = userInfo($this->session->userdata['EMIRATES']['userId']);
@@ -136,7 +137,7 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="#"><i class="fa fa-sliders"></i>&nbsp;Slider Management</a>
+                                <a href="<?php echo base_url().'admin/slider/listing'?>"><i class="fa fa-sliders"></i>&nbsp;Slider Management</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-picture-o"></i>&nbsp;Logo Management</a>
