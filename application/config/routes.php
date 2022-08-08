@@ -66,5 +66,13 @@ $route['admin/slider/edit/(:any)'] = 'Slider/edit_slider';
 $route['admin/slider/delete/(:any)'] = 'Slider/delete_slider';
 /*****************SLIDER AREA END**************************/
 
+/*****************LOGO AREA START*************************/
+$route['admin/logo/listing'] = 'Logo';
+$route['admin/logo/listing/(:num)'] = 'Logo';
+$route['admin/logo/add'] = 'Logo/add_logo';
+$route['admin/logo/edit/(:any)'] = 'Logo/edit_logo';
+$route['admin/logo/delete/(:any)'] = 'Logo/delete_logo';
+/*****************LOGO AREA END**************************/
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

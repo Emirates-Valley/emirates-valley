@@ -140,7 +140,7 @@
                                 <a href="<?php echo base_url().'admin/slider/listing'?>"><i class="fa fa-sliders"></i>&nbsp;Slider Management</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-picture-o"></i>&nbsp;Logo Management</a>
+                                <a href="<?php echo base_url().'admin/logo/listing'?>"><i class="fa fa-picture-o"></i>&nbsp;Logo Management</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-video-camera"></i>&nbsp;Video Gallery Management</a>

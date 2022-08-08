@@ -2,34 +2,34 @@
     <div class="content ">            
         <div class="page-header">
             <div>
-                <h3>Manage Slider 
-                <a href="<?php echo base_url().'admin/slider/add'?>" style="margin-right:10px" class="btn btn-outline-primary pull-right">Add Slider</a></h3>
+                <h3>Manage Logo 
+                <a href="<?php echo base_url().'admin/logo/add'?>" style="margin-right:10px" class="btn btn-outline-primary pull-right">Add Logo</a></h3>
                 <nav aria-label="breadcrumb" class="d-flex align-items-start">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="<?php echo base_url().'admin/dashboard'?>">Home</a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Manage Slider</li>
+                        <li class="breadcrumb-item active" aria-current="page">Manage Logo</li>
                     </ol>
                 </nav>
                 <br />
                 <label>Search</label>
                 <div class="row">
                     <div class="col-md-12">
-                        <form method="POST" action="<?php echo base_url().'admin/slider/listing'?>">
+                        <form method="POST" action="<?php echo base_url().'admin/logo/listing'?>">
                             <div class="col-md-3" style="padding:0;float: left;">
                                 <?php 
                                     $searchVal = '';
-                                    if($this->session->userdata('slidersearch') != ''){
-                                        $searchVal = $this->session->userdata('slidersearch');
+                                    if($this->session->userdata('logosearch') != ''){
+                                        $searchVal = $this->session->userdata('logosearch');
                                     }    
                                 ?>
-                                <input type="text" class="form-control" name="slidersearch" value="<?php echo $searchVal?>" placeholder="Search Slider">
+                                <input type="text" class="form-control" name="logosearch" value="<?php echo $searchVal?>" placeholder="Search Logo">
                             </div>
                             <div class="col-md-3" style="float: left;">
                                 <button type="submit" name="submit" value="Search" class="btn btn-primary">Search</button>
                                 <?php 
-                                    if($this->session->userdata('slidersearch') != ''){
+                                    if($this->session->userdata('logosearch') != ''){
                                 ?>
                                         <button type="button" onclick="reset_search()" class="btn btn-success">Reset</button>
                                 <?php 
@@ -58,8 +58,8 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th scope="col">Slider Image</th>
-                                                <th scope="col">Title</th>
+                                                <th scope="col">Logo Image</th>
+                                                <th scope="col">Website Name</th>
                                                 <th scope="col">status</th>
                                                 <th scope="col">Dated</th>
                                                 <th scope="col">Action</th>
@@ -67,36 +67,36 @@
                                         </thead>
                                         <tbody>
                                         <?php 
-                                            if(count($sliders) > 0){
-                                                foreach($sliders as $slider){
+                                            if(count($logos) > 0){
+                                                foreach($logos as $logo){
                                         ?>
-                                                <tr id="slider_id-<?php echo $slider->slider_id?>">
+                                                <tr id="logo_id-<?php echo $logo->logo_id?>">
                                                     <td>
                                                         <figure class="avatar avatar-sm">
                                                             <?php 
-                                                                if($slider->slider_image != ''){
-                                                                    $slider_image = base_url().'resource/images/other_images/'.$slider->slider_image;
+                                                                if($logo->logo_image != ''){
+                                                                    $logo_image = base_url().'resource/images/other_images/'.$logo->logo_image;
                                                                 } else {
-                                                                    $slider_image = base_url().'assets/media/image/user/man_avatar3.jpg';
+                                                                    $logo_image = base_url().'assets/media/image/user/man_avatar3.jpg';
                                                                 }
                                                             ?>
-                                                            <img src="<?php echo $slider_image?>"
-                                                                class="rounded-circle" alt="<?php echo $slider->title?>">
+                                                            <img src="<?php echo $logo_image?>"
+                                                                class="rounded-circle" alt="<?php echo $logo->website_name?>">
                                                         </figure>
                                                     </td>
-                                                    <td><?php echo $slider->title?></td>
+                                                    <td><?php echo $logo->website_name?></td>
                                                     <td>
                                                         <?php 
-                                                            if($slider->status == 'Active'){
+                                                            if($logo->status == 'Active'){
                                                                 $status = "'Inactive'";
-                                                                echo '<a href="javascript:;" onclick="change_status('.$slider->slider_id.','.$status.')" class="btn btn-success">'.$slider->status.'</a>';
-                                                            } else if($slider->status == 'Inactive'){
+                                                                echo '<a href="javascript:;" onclick="change_status('.$logo->logo_id.','.$status.')" class="btn btn-success">'.$logo->status.'</a>';
+                                                            } else if($logo->status == 'Inactive'){
                                                                 $status = "'Active'";
-                                                                echo '<a href="javascript:;" onclick="change_status('.$slider->slider_id.','.$status.')" class="btn btn-danger">Inactive</a>';
+                                                                echo '<a href="javascript:;" onclick="change_status('.$logo->logo_id.','.$status.')" class="btn btn-danger">Inactive</a>';
                                                             }
                                                         ?>
                                                     </td>
-                                                    <td><?php echo $slider->dated;?></td>
+                                                    <td><?php echo $logo->dated;?></td>
                                                     <td>
                                                         <div class="dropdown">
                                                             <a href="#" class="btn btn-outline-light tn-sm"
@@ -104,8 +104,8 @@
                                                                 <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-right">
-                                                                <a class="dropdown-item" href="<?php echo base_url().'admin/slider/edit/'.base64_encode($slider->slider_id)?>">Update Slider</a>
-                                                                <a class="dropdown-item" href="<?php echo base_url().'admin/slider/delete/'.base64_encode($slider->slider_id)?>">Delete Slider</a>
+                                                                <a class="dropdown-item" href="<?php echo base_url().'admin/logo/edit/'.base64_encode($logo->logo_id)?>">Update Logo</a>
+                                                                <a class="dropdown-item" href="<?php echo base_url().'admin/logo/delete/'.base64_encode($logo->logo_id)?>">Delete Logo</a>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -132,24 +132,24 @@
 <script>
     function reset_search(){
         $.ajax({
-            url : '<?php echo base_url()?>Slider/reset_filter',
+            url : '<?php echo base_url()?>Logo/reset_filter',
             data: 'reset=1',
             type: 'POST',
             success: function ( data ) { 
                 if(data == 1){
-                    window.location = '<?php echo base_url()?>admin/slider/listing';
+                    window.location = '<?php echo base_url()?>admin/logo/listing';
                 }
             }
         });
     }
-    function change_status(slider_id,status){
+    function change_status(logo_id,status){
         $.ajax({
-            url : '<?php echo base_url()?>Slider/change_status',
-            data: 'slider_id='+slider_id+'&status='+status,
+            url : '<?php echo base_url()?>Logo/change_status',
+            data: 'logo_id='+logo_id+'&status='+status,
             type: 'POST',
             success: function ( data ) { 
                 if(data != ''){
-                    window.location = '<?php echo base_url()?>admin/slider/listing';
+                    window.location = '<?php echo base_url()?>admin/logo/listing';
                 }
             }
         });
