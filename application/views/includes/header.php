@@ -143,7 +143,7 @@
                                 <a href="<?php echo base_url().'admin/logo/listing'?>"><i class="fa fa-picture-o"></i>&nbsp;Logo Management</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-video-camera"></i>&nbsp;Video Gallery Management</a>
+                                <a href="<?php echo base_url().'admin/video/listing'?>"><i class="fa fa-video-camera"></i>&nbsp;Video Gallery Management</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-users"></i>&nbsp;Team Management</a>

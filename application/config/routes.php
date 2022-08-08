@@ -74,5 +74,13 @@ $route['admin/logo/edit/(:any)'] = 'Logo/edit_logo';
 $route['admin/logo/delete/(:any)'] = 'Logo/delete_logo';
 /*****************LOGO AREA END**************************/
 
+/*****************VIDEO GALLERY AREA START*************************/
+$route['admin/video/listing'] = 'Video';
+$route['admin/video/listing/(:num)'] = 'Video';
+$route['admin/video/add'] = 'Video/add_video';
+$route['admin/video/edit/(:any)'] = 'Video/edit_video';
+$route['admin/video/delete/(:any)'] = 'Video/delete_video';
+/*****************VIDEO GALLERY AREA END**************************/
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -60,7 +60,6 @@
                                                     <img src="<?php echo base_url().'resource/images/other_images/'.$logo->logo_image?>" style="width:100px" />
                                                 </div>
                                             </div>    
-                                            <?php echo form_error('logo_image', '<div class="alert alert-danger">', '</div>'); ?> 
                                         </div>
                                     </div>
                                     <br />
