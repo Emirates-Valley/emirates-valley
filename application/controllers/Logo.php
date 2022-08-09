@@ -137,7 +137,7 @@ class Logo extends CI_Controller {
 				if($this->upload->do_upload('logo_image'))
 				{ 
 					if($data['logo']->logo_image != ''){
-						@unlink($target_dir.'/'.$data['logo']->logo_image);
+						@unlink($target_dir.$data['logo']->logo_image);
 					}
 					$data = $this->upload->data();
 					$img_arr = array(

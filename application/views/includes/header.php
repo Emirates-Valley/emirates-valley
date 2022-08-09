@@ -149,7 +149,7 @@
                                 <a href="<?php echo base_url().'admin/team/listing'?>"><i class="fa fa-users"></i>&nbsp;Team Management</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-credit-card"></i>&nbsp;Payment Plan Management</a>
+                                <a href="<?php echo base_url().'admin/payment/listing'?>"><i class="fa fa-credit-card"></i>&nbsp;Payment Plan Management</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-newspaper-o"></i>&nbsp;News Management</a>

@@ -137,7 +137,7 @@ class Slider extends CI_Controller {
 				if($this->upload->do_upload('slider_image'))
 				{ 
 					if($data['slider']->slider_image != ''){
-						@unlink($target_dir.'/'.$data['slider']->slider_image);
+						@unlink($target_dir.$data['slider']->slider_image);
 					}
 					$data = $this->upload->data();
 					$img_arr = array(

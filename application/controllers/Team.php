@@ -144,7 +144,7 @@ class Team extends CI_Controller {
 				if($this->upload->do_upload('team_image'))
 				{ 
 					if($data['team']->team_image != ''){
-						@unlink($target_dir.'/'.$data['team']->team_image);
+						@unlink($target_dir.$data['team']->team_image);
 					}
 					$data = $this->upload->data();
 					$img_arr = array(

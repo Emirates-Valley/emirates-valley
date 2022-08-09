@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Video extends CI_Controller {
+class Payment extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,7 +21,7 @@ class Video extends CI_Controller {
 	public function __construct() 
 	{
         parent::__construct();
-        $this->load->model('Video_model');
+        $this->load->model('Payment_model');
         error_reporting(0);
 		$this->userId = $this->session->userdata['EMIRATES']['userId'];
         $this->userType = $this->session->userdata['EMIRATES']['user_type'];
@@ -33,12 +33,12 @@ class Video extends CI_Controller {
 	public function index()
 	{
 		if($this->input->post('submit') == 'Search'){
-            $this->session->unset_userdata('videosearch');
-            $this->session->set_userdata('videosearch',$this->input->post('videosearch'));
+            $this->session->unset_userdata('paymentsearch');
+            $this->session->set_userdata('paymentsearch',$this->input->post('paymentsearch'));
         }
 		$config = array();
-		$total_rows = count($this->Video_model->video_listing());
-		$config["base_url"] = base_url()."admin/video/listing";
+		$total_rows = count($this->Payment_model->payment_listing());
+		$config["base_url"] = base_url()."admin/payment/listing";
 		$config["total_rows"] = $total_rows;
         $config["per_page"] = 25;
         $config["uri_segment"] = 3;
@@ -68,8 +68,8 @@ class Video extends CI_Controller {
         $page = $this->uri->segment(3);
 
         $data["links"] = $this->pagination->create_links();
-		$data['videos'] = $this->Video_model->video_listing($config["per_page"], $page);
-		$data['main_content'] = 'admin/videos/index';
+		$data['payments'] = $this->Payment_model->payment_listing($config["per_page"], $page);
+		$data['main_content'] = 'admin/payment/index';
         $this->load->view('includes/template', $data);
 	}
 
@@ -78,91 +78,89 @@ class Video extends CI_Controller {
 		if(!$this->input->is_ajax_request()){
 			exit('No direct script access allowed!');
 		}
-		$this->session->unset_userdata('videosearch');
+		$this->session->unset_userdata('paymentsearch');
 		exit('1');
 	}
 
-	public function add_video()
+	public function add_payment()
 	{
-		if($this->input->post('add_video') == 'add_video'){
+		if($this->input->post('add_payment') == 'add_payment'){
 			extract($_POST);
-			$this->form_validation->set_rules('title', 'Title', 'trim|required');
+			$this->form_validation->set_rules('plan_title', 'Plan Title', 'trim|required');
 			$this->form_validation->set_rules('description', 'Description', 'trim|required');
-			$this->form_validation->set_rules('embed_code', 'Embed Code', 'trim|required');
-			$this->form_validation->set_rules('video_file', 'File', 'callback_file_check');
+			$this->form_validation->set_rules('plan_image', 'Image', 'callback_file_check');
 			if($this->form_validation->run() != FALSE){
-				$insert_arr = array('user_id' => $this->userId,'title' => $title, 'description' => $description, 'embed_code' => $embed_code, 'status' => $status, 'dated' => date('Y-m-d H:i:s'));
-				$video_id = $this->Video_model->add_video($insert_arr);
+				$insert_arr = array('user_id' => $this->userId,'plan_title' => $plan_title, 'description' => $description, 'status' => $status, 'dated' => date('Y-m-d H:i:s'));
+				$payment_id = $this->Payment_model->add_payment($insert_arr);
 				$target_dir = MEDIA_PATH;
-				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['video_file']['name']);
+				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['plan_image']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
-				$config['allowed_types'] = 'mp4';
+				$config['allowed_types'] = 'jpg|png|jpeg';
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
-				if($this->upload->do_upload('video_file'))
+				if($this->upload->do_upload('plan_image'))
 				{ 
 					$data = $this->upload->data();
 					$img_arr = array(
-						'video_file' => $data['file_name']
+						'plan_image' => $data['file_name']
 					);
-					$this->Video_model->edit_video($video_id,$img_arr);
-					$this->session->set_userdata('message_success','Video Added Successfully!');
-					redirect(base_url().'admin/video/listing',$data);
+					$this->Payment_model->edit_payment($payment_id,$img_arr);
+					$this->session->set_userdata('message_success','Payment Plan Added Successfully!');
+					redirect(base_url().'admin/payment/listing',$data);
 				}
 			} 
 		} 
-		$data['main_content'] = 'admin/videos/add';
+		$data['main_content'] = 'admin/payment/add';
 		$this->load->view('includes/template', $data);
 	}
 
-	public function edit_video()
+	public function edit_payment()
 	{
-		$video_id = base64_decode($this->uri->segment(4));
-		$data['video'] = $this->Video_model->get_video($video_id);
-		if($this->input->post('edit_video') == 'edit_video'){
+		$payment_id = base64_decode($this->uri->segment(4));
+		$data['payment'] = $this->Payment_model->get_payment($payment_id);
+		if($this->input->post('edit_payment') == 'edit_payment'){
 			extract($_POST);
-			$this->form_validation->set_rules('title', 'Title', 'trim|required');
+			$this->form_validation->set_rules('plan_title', 'Plan Title', 'trim|required');
 			$this->form_validation->set_rules('description', 'Description', 'trim|required');
-			$this->form_validation->set_rules('embed_code', 'Embed Code', 'trim|required');
-			$this->form_validation->set_rules('video_file', 'File', 'callback_file_check');
+			$this->form_validation->set_rules('plan_image', 'Image', 'callback_file_check');
 			if($this->form_validation->run() != FALSE){
-				$update_arr = array('title' => $title, 'description' => $description, 'embed_code' => $embed_code, 'status' => $status);
-				$this->Video_model->edit_video($video_id,$update_arr);
+				$update_arr = array('plan_title' => $plan_title, 'description' => $description, 'status' => $status);
+				$this->Payment_model->edit_payment($payment_id,$update_arr);
 				$target_dir = MEDIA_PATH;
-				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['video_file']['name']);
+				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['plan_image']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
-				$config['allowed_types'] = 'mp4';
+				$config['allowed_types'] = 'jpg|png|jpeg';
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
-				if($this->upload->do_upload('video_file'))
+				if($this->upload->do_upload('plan_image'))
 				{ 
-					if($data['video']->file != ''){
-						@unlink($target_dir.$data['video']->file);
+					if($data['payment']->plan_image != ''){
+						@unlink($target_dir.$data['payment']->plan_image);
 					}
 					$data = $this->upload->data();
 					$img_arr = array(
-						'video_file' => $data['file_name']
+						'plan_image' => $data['file_name']
 					);
-					$this->Video_model->edit_video($video_id,$img_arr);
-					$this->session->set_userdata('message_success','Video Updated Successfully!');
-					redirect(base_url().'admin/video/listing',$data);
+					$this->Payment_model->edit_payment($payment_id,$img_arr);
+					$this->session->set_userdata('message_success','Payment Plan Updated Successfully!');
+					redirect(base_url().'admin/payment/listing',$data);
 				}
 			} 
 		} 
-		$data['main_content'] = 'admin/videos/edit';
+		$data['main_content'] = 'admin/payment/edit';
 		$this->load->view('includes/template', $data);
 	}
 
 	public function file_check($str){
-		$allowed_mime_type_arr = array('application/mp4', 'video/mp4');
-		$mime = get_mime_by_extension($_FILES['video_file']['name']);
-		if(isset($_FILES['video_file']['name']) && $_FILES['video_file']['name']!=""){
+		$allowed_mime_type_arr = array('image/jpeg','image/pjpeg','image/png','image/x-png');
+		$mime = get_mime_by_extension($_FILES['plan_image']['name']);
+		if(isset($_FILES['plan_image']['name']) && $_FILES['plan_image']['name']!=""){
 			if(in_array($mime, $allowed_mime_type_arr)){
 				return true;
 			}else{
-				$this->form_validation->set_message('file_check', 'Please select only mp4 file.');
+				$this->form_validation->set_message('file_check', 'Please select only jpg/png file.');
 				return false;
 			}
 		}else{
@@ -171,15 +169,15 @@ class Video extends CI_Controller {
 		}
 	}
 
-	public function delete_video()
+	public function delete_payment()
 	{
-		$video = $this->Video_model->get_video(base64_decode($this->uri->segment(4)));
-		if(!empty($video)){
-			@unlink(MEDIA_PATH.$video->video_file);
+		$payment = $this->Payment_model->get_payment(base64_decode($this->uri->segment(4)));
+		if(!empty($payment)){
+			@unlink(MEDIA_PATH.$payment->plan_image);
 		}
-		$this->Video_model->delete_video($this->uri->segment(4));
-		$this->session->set_userdata('message_success','Video Deleted Successfully!');
-		redirect(base_url().'admin/video/listing');
+		$this->Payment_model->delete_payment($this->uri->segment(4));
+		$this->session->set_userdata('message_success','Payment Plan Deleted Successfully!');
+		redirect(base_url().'admin/payment/listing');
 	}
 
 	public function change_status()
@@ -187,10 +185,10 @@ class Video extends CI_Controller {
 		if(!$this->input->is_ajax_request()){
 			exit('No direct script access allowed!');
 		}
-		$video_id = $this->input->post('video_id');
+		$plan_id = $this->input->post('plan_id');
 		$updt_arr = array('status' => $this->input->post('status'));
-		$this->Video_model->edit_video($video_id,$updt_arr);
-		$this->session->set_userdata('message_success','Video Status Change Successfully!');
+		$this->Payment_model->edit_payment($plan_id,$updt_arr);
+		$this->session->set_userdata('message_success','Payment Plan Status Change Successfully!');
 		echo $this->session->userdata('message_success');
 	}
 }

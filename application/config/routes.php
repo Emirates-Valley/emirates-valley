@@ -90,5 +90,13 @@ $route['admin/team/edit/(:any)'] = 'Team/edit_team';
 $route['admin/team/delete/(:any)'] = 'Team/delete_team';
 /*****************TEAM AREA END**************************/
 
+/*****************PAYMENT PLAN AREA START*************************/
+$route['admin/payment/listing'] = 'Payment';
+$route['admin/payment/listing/(:num)'] = 'Payment';
+$route['admin/payment/add'] = 'Payment/add_payment';
+$route['admin/payment/edit/(:any)'] = 'Payment/edit_payment';
+$route['admin/payment/delete/(:any)'] = 'Payment/delete_payment';
+/*****************PAYMENT PLAN AREA END**************************/
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
