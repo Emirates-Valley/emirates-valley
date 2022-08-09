@@ -75,7 +75,7 @@
                                                         <figure class="avatar avatar-sm">
                                                             <?php 
                                                                 if($logo->logo_image != ''){
-                                                                    $logo_image = base_url().'resource/images/other_images/'.$logo->logo_image;
+                                                                    $logo_image = base_url().MEDIA_PATH.$logo->logo_image;
                                                                 } else {
                                                                     $logo_image = base_url().'assets/media/image/user/man_avatar3.jpg';
                                                                 }

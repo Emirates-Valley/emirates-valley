@@ -75,7 +75,7 @@
                                                         <figure class="avatar avatar-sm">
                                                             <?php 
                                                                 if($slider->slider_image != ''){
-                                                                    $slider_image = base_url().'resource/images/other_images/'.$slider->slider_image;
+                                                                    $slider_image = base_url().MEDIA_PATH.$slider->slider_image;
                                                                 } else {
                                                                     $slider_image = base_url().'assets/media/image/user/man_avatar3.jpg';
                                                                 }

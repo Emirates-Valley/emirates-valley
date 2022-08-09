@@ -94,7 +94,7 @@ class Team extends CI_Controller {
 			if($this->form_validation->run() != FALSE){
 				$insert_arr = array('user_id' => $this->userId,'name' => $name, 'designation' => $designation, 'phone' => $phone, 'email' => $email, 'status' => $status, 'dated' => date('Y-m-d H:i:s'));
 				$team_id = $this->Team_model->add_team($insert_arr);
-				$target_dir ="./resource/images/other_images";
+				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['team_image']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
@@ -134,7 +134,7 @@ class Team extends CI_Controller {
 			if($this->form_validation->run() != FALSE){
 				$update_arr = array('name' => $name, 'designation' => $designation, 'phone' => $phone, 'email' => $email, 'status' => $status);
 				$this->Team_model->edit_team($team_id,$update_arr);
-				$target_dir ="./resource/images/other_images";
+				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['team_image']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
@@ -143,6 +143,9 @@ class Team extends CI_Controller {
 				$this->upload->initialize($config);
 				if($this->upload->do_upload('team_image'))
 				{ 
+					if($data['team']->team_image != ''){
+						@unlink($target_dir.'/'.$data['team']->team_image);
+					}
 					$data = $this->upload->data();
 					$img_arr = array(
 						'team_image' => $data['file_name']
@@ -212,9 +215,9 @@ class Team extends CI_Controller {
 
 	public function delete_team()
 	{
-		$team = $this->Slider_model->get_team(base64_decode($this->uri->segment(4)));
+		$team = $this->Team_model->get_team(base64_decode($this->uri->segment(4)));
 		if(!empty($team)){
-			@unlink('./resource/images/other_images/'.$team->team_image);
+			@unlink(MEDIA_PATH.$team->team_image);
 		}
 		$this->Team_model->delete_team($this->uri->segment(4));
 		$this->session->set_userdata('message_success','Team Member Deleted Successfully!');

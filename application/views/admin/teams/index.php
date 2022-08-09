@@ -78,7 +78,7 @@
                                                         <figure class="avatar avatar-sm">
                                                             <?php 
                                                                 if($team->team_image != ''){
-                                                                    $team_image = base_url().'resource/images/other_images/'.$team->team_image;
+                                                                    $team_image = base_url().MEDIA_PATH.$team->team_image;
                                                                 } else {
                                                                     $team_image = base_url().'assets/media/image/user/man_avatar3.jpg';
                                                                 }

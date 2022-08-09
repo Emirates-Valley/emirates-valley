@@ -63,8 +63,8 @@
                                             <div class="form-group">
                                                 <div class="custom-file">
                                                     <video width="320" height="240" controls>
-                                                        <source src="<?php echo base_url().'resource/images/other_images/'.$video->video_file?>" type="video/mp4">
-                                                        <source src="<?php echo base_url().'resource/images/other_images/'.$video->video_file?>" type="video/ogg">
+                                                        <source src="<?php echo base_url().MEDIA_PATH.$video->video_file?>" type="video/mp4">
+                                                        <source src="<?php echo base_url().MEDIA_PATH.$video->video_file?>" type="video/ogg">
                                                     </video>
                                                 </div>
                                             </div>    

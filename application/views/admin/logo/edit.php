@@ -57,7 +57,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <div class="custom-file">
-                                                    <img src="<?php echo base_url().'resource/images/other_images/'.$logo->logo_image?>" style="width:100px" />
+                                                    <img src="<?php echo base_url().MEDIA_PATH.$logo->logo_image?>" style="width:100px" />
                                                 </div>
                                             </div>    
                                         </div>

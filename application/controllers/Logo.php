@@ -92,7 +92,7 @@ class Logo extends CI_Controller {
 			if($this->form_validation->run() != FALSE){
 				$insert_arr = array('user_id' => $this->userId,'website_name' => $website_name, 'description' => $description, 'status' => $status, 'dated' => date('Y-m-d H:i:s'));
 				$logo_id = $this->Logo_model->add_logo($insert_arr);
-				$target_dir ="./resource/images/other_images";
+				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['logo_image']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
@@ -127,7 +127,7 @@ class Logo extends CI_Controller {
 			if($this->form_validation->run() != FALSE){
 				$update_arr = array('website_name' => $website_name, 'description' => $description, 'status' => $status);
 				$this->Logo_model->edit_logo($logo_id,$update_arr);
-				$target_dir ="./resource/images/other_images";
+				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['logo_image']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
@@ -173,7 +173,7 @@ class Logo extends CI_Controller {
 	{
 		$logo = $this->Logo_model->get_logo(base64_decode($this->uri->segment(4)));
 		if(!empty($logo)){
-			@unlink('./resource/images/other_images/'.$logo->logo_image);
+			@unlink(MEDIA_PATH.$logo->logo_image);
 		}
 		$this->Logo_model->delete_logo($this->uri->segment(4));
 		$this->session->set_userdata('message_success','Logo Deleted Successfully!');

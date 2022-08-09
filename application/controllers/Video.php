@@ -93,7 +93,7 @@ class Video extends CI_Controller {
 			if($this->form_validation->run() != FALSE){
 				$insert_arr = array('user_id' => $this->userId,'title' => $title, 'description' => $description, 'embed_code' => $embed_code, 'status' => $status, 'dated' => date('Y-m-d H:i:s'));
 				$video_id = $this->Video_model->add_video($insert_arr);
-				$target_dir ="./resource/images/other_images";
+				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['video_file']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
@@ -129,7 +129,7 @@ class Video extends CI_Controller {
 			if($this->form_validation->run() != FALSE){
 				$update_arr = array('title' => $title, 'description' => $description, 'embed_code' => $embed_code, 'status' => $status);
 				$this->Video_model->edit_video($video_id,$update_arr);
-				$target_dir ="./resource/images/other_images";
+				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['video_file']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
@@ -175,7 +175,7 @@ class Video extends CI_Controller {
 	{
 		$video = $this->Video_model->get_video(base64_decode($this->uri->segment(4)));
 		if(!empty($video)){
-			@unlink('./resource/images/other_images/'.$video->video_file);
+			@unlink(MEDIA_PATH.$video->video_file);
 		}
 		$this->Video_model->delete_video($this->uri->segment(4));
 		$this->session->set_userdata('message_success','Video Deleted Successfully!');

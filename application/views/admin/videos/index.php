@@ -75,7 +75,7 @@
                                                         <figure class="avatar avatar-sm">
                                                             <?php 
                                                                 if($video->video_file != ''){
-                                                                    $video_file = base_url().'resource/images/other_images/'.$video->video_file;
+                                                                    $video_file = base_url().MEDIA_PATH.$video->video_file;
                                                             ?>        
                                                                     <video width="100" height="70" controls>
                                                                         <source src="<?php echo $video_file?>" type="video/mp4">

@@ -92,7 +92,7 @@ class Slider extends CI_Controller {
 			if($this->form_validation->run() != FALSE){
 				$insert_arr = array('user_id' => $this->userId,'title' => $title, 'description' => $description, 'status' => $status, 'dated' => date('Y-m-d H:i:s'));
 				$slider_id = $this->Slider_model->add_slider($insert_arr);
-				$target_dir ="./resource/images/other_images";
+				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['slider_image']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
@@ -127,7 +127,7 @@ class Slider extends CI_Controller {
 			if($this->form_validation->run() != FALSE){
 				$update_arr = array('title' => $title, 'description' => $description, 'status' => $status);
 				$this->Slider_model->edit_slider($slider_id,$update_arr);
-				$target_dir ="./resource/images/other_images";
+				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['slider_image']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
@@ -173,7 +173,7 @@ class Slider extends CI_Controller {
 	{
 		$slider = $this->Slider_model->get_slider(base64_decode($this->uri->segment(4)));
 		if(!empty($slider)){
-			@unlink('./resource/images/other_images/'.$slider->slider_image);
+			@unlink(MEDIA_PATH.$slider->slider_image);
 		}
 		$this->Slider_model->delete_slider($this->uri->segment(4));
 		$this->session->set_userdata('message_success','Slider Deleted Successfully!');
