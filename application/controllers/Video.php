@@ -175,7 +175,7 @@ class Video extends CI_Controller {
 	{
 		$video = $this->Video_model->get_video(base64_decode($this->uri->segment(4)));
 		if(!empty($video)){
-			@unlink('./resource/images/other_images/'.$video->file);
+			@unlink('./resource/images/other_images/'.$video->video_file);
 		}
 		$this->Video_model->delete_video($this->uri->segment(4));
 		$this->session->set_userdata('message_success','Video Deleted Successfully!');

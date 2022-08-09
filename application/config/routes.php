@@ -82,5 +82,13 @@ $route['admin/video/edit/(:any)'] = 'Video/edit_video';
 $route['admin/video/delete/(:any)'] = 'Video/delete_video';
 /*****************VIDEO GALLERY AREA END**************************/
 
+/*****************TEAM AREA START*************************/
+$route['admin/team/listing'] = 'Team';
+$route['admin/team/listing/(:num)'] = 'Team';
+$route['admin/team/add'] = 'Team/add_team';
+$route['admin/team/edit/(:any)'] = 'Team/edit_team';
+$route['admin/team/delete/(:any)'] = 'Team/delete_team';
+/*****************TEAM AREA END**************************/
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

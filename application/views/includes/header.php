@@ -146,7 +146,7 @@
                                 <a href="<?php echo base_url().'admin/video/listing'?>"><i class="fa fa-video-camera"></i>&nbsp;Video Gallery Management</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-users"></i>&nbsp;Team Management</a>
+                                <a href="<?php echo base_url().'admin/team/listing'?>"><i class="fa fa-users"></i>&nbsp;Team Management</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-credit-card"></i>&nbsp;Payment Plan Management</a>
