@@ -152,7 +152,7 @@
                                 <a href="<?php echo base_url().'admin/payment/listing'?>"><i class="fa fa-credit-card"></i>&nbsp;Payment Plan Management</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-newspaper-o"></i>&nbsp;News Management</a>
+                                <a href="<?php echo base_url().'admin/news/listing'?>"><i class="fa fa-newspaper-o"></i>&nbsp;News Management</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-quote-left"></i>&nbsp;Testimonial Management</a>

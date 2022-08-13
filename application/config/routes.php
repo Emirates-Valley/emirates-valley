@@ -98,5 +98,13 @@ $route['admin/payment/edit/(:any)'] = 'Payment/edit_payment';
 $route['admin/payment/delete/(:any)'] = 'Payment/delete_payment';
 /*****************PAYMENT PLAN AREA END**************************/
 
+/*****************NEWS AREA START*************************/
+$route['admin/news/listing'] = 'News';
+$route['admin/news/listing/(:num)'] = 'News';
+$route['admin/news/add'] = 'News/add_news';
+$route['admin/news/edit/(:any)'] = 'News/edit_news';
+$route['admin/news/delete/(:any)'] = 'News/delete_news';
+/*****************NEWS AREA END**************************/
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
