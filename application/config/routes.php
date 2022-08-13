@@ -106,5 +106,13 @@ $route['admin/news/edit/(:any)'] = 'News/edit_news';
 $route['admin/news/delete/(:any)'] = 'News/delete_news';
 /*****************NEWS AREA END**************************/
 
+/*****************FEATURE AREA START*************************/
+$route['admin/feature/listing'] = 'Feature';
+$route['admin/feature/listing/(:num)'] = 'Feature';
+$route['admin/feature/add'] = 'Feature/add_feature';
+$route['admin/feature/edit/(:any)'] = 'Feature/edit_feature';
+$route['admin/feature/delete/(:any)'] = 'Feature/delete_feature';
+/*****************FEATURE AREA END**************************/
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

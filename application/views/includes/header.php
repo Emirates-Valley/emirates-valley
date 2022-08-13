@@ -158,7 +158,7 @@
                                 <a href="#"><i class="fa fa-quote-left"></i>&nbsp;Testimonial Management</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-bars"></i>&nbsp;Feature Management</a>
+                                <a href="<?php echo base_url().'admin/feature/listing'?>"><i class="fa fa-bars"></i>&nbsp;Feature Management</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-address-book"></i>&nbsp;Contact Us Management</a>
