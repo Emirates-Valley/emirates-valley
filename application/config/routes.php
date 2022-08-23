@@ -106,6 +106,14 @@ $route['admin/news/edit/(:any)'] = 'News/edit_news';
 $route['admin/news/delete/(:any)'] = 'News/delete_news';
 /*****************NEWS AREA END**************************/
 
+/*****************TESTIMONIAL AREA START*************************/
+$route['admin/testimonial/listing'] = 'Testimonial';
+$route['admin/testimonial/listing/(:num)'] = 'Testimonial';
+$route['admin/testimonial/add'] = 'Testimonial/add_testimonial';
+$route['admin/testimonial/edit/(:any)'] = 'Testimonial/edit_testimonial';
+$route['admin/testimonial/delete/(:any)'] = 'Testimonial/delete_testimonial';
+/*****************TESTIMONIAL AREA END**************************/
+
 /*****************FEATURE AREA START*************************/
 $route['admin/feature/listing'] = 'Feature';
 $route['admin/feature/listing/(:num)'] = 'Feature';

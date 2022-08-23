@@ -155,7 +155,7 @@
                                 <a href="<?php echo base_url().'admin/news/listing'?>"><i class="fa fa-newspaper-o"></i>&nbsp;News Management</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-quote-left"></i>&nbsp;Testimonial Management</a>
+                                <a href="<?php echo base_url().'admin/testimonial/listing'?>"><i class="fa fa-quote-left"></i>&nbsp;Testimonial Management</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url().'admin/feature/listing'?>"><i class="fa fa-bars"></i>&nbsp;Feature Management</a>
