@@ -1,25 +1,50 @@
 <!-- ======= Hero Section ======= -->
+<?php 
+
+///echo "<pre>"; print_r();echo "</pre>";exit;
+
+?>
 <section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
       <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
       <div class="carousel-inner" role="listbox">
+<?php 
 
+
+//echo "<pre>"; print_r($features);echo "</pre>";exit;
+
+$sliders=json_decode(home_slider(),true);
+
+$i=1;
+$classs='';
+foreach($sliders as $vals){
+ if($i==1){
+   $classs='active';
+ }else{
+  $classs='';
+ }
+  $i+1;
+?>
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(<?php echo base_url()?>assets/web/assets/img/slide/slide-1.jpg)">
+        <div class="carousel-item <?php echo $classs; ?>" style="background-image: url(<?php echo base_url()?>resource/images/other_images/<?php echo $vals['slider_image']; ?>)">
           <div class="carousel-container">
             <div class="container">
               
-              <h2 class="animate__animated animate__fadeInDown">WELCOME TO<span>BLUE WORLD CITY</span></h2>
-              <p class="animate__animated animate__fadeInUp">A blue world city is one of the modern and futuristic housing societies in the premises of Islamabad and Rawalpindi. The developers of this real estate project are the Blue Group of Companies, which know how to build mega housing projects. Moreover, this housing society has the Rawalpindi Development Authority (RDA) approval.</p>
+              <h2 class="animate__animated animate__fadeInDown"><?php echo $vals['title']; ?></h2>
+              <p class="animate__animated animate__fadeInUp"><?php echo $vals['description']; ?></p>
               <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
             </div>
           </div>
         </div>
+<?php 
+
+}
+?>
 
         <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(<?php echo base_url()?>assets/web/assets/img/slide/slide-2.jpg)">
+       <!--  <div class="carousel-item" style="background-image: url(<?php echo base_url()?>assets/web/assets/img/slide/slide-2.jpg)">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
@@ -27,10 +52,10 @@
               <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(<?php echo base_url()?>assets/web/assets/img/slide/slide-3.jpg)">
+       <!--  <div class="carousel-item" style="background-image: url(<?php echo base_url()?>assets/web/assets/img/slide/slide-3.jpg)">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
@@ -38,7 +63,7 @@
               <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
 
@@ -122,17 +147,24 @@
           <h2>FEATURES</h2>
           <p>Check our FEATURES</p>
         </div>
+<?php 
 
+$features=json_decode(home_features(),true);
+?>
         <div class="row">
+          <?php 
+foreach($features as $vals){
+  // 
+?>
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
             <div class="service-item position-relative">
-              <div class="icon mb-3"><img src="<?php echo base_url()?>assets/web/assets/img/services/icon-calculator.svg"></div>
-            <h4>SECURITY</h4>
-            <p>Security is vital to have peaceful and quality living. And, to facilitate the investors, the blue world city is here with a foolproof security system that will allow a comfortable and friendly living...</p>
+              <div class="icon mb-3"><img style="width: 64px;" src="<?php echo base_url()?>resource/images/other_images/<?php echo $vals['feature_image'];?>"></div>
+            <h4><?php echo $vals['title']; ?></h4>
+            <p><?php echo $vals['description']; ?></p>
              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a></div>
           </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+<?php } ?>
+          <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
             <div class="service-item position-relative"><div class="icon mb-3"> <img src="<?php echo base_url()?>assets/web/assets/img/services/icon-karma.svg"></div><h4>PRIME LOCATION</h4>
             <p>This housing society’s location is the main feature as it is close to Chakri Interchange on M2-Motorway and Islamabad International Airport. Moreover, it is just 5 Km away from Rawalpindi Rind Road...</p> 
             <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a></div>
@@ -160,7 +192,7 @@
             <div class="service-item position-relative"><div class="icon mb-3"> <img src="<?php echo base_url()?>assets/web/assets/img/services/icon-calculator.svg"></div><h4>COMMERCIAL AREA</h4>
             <p>The housing society provides tons of amenities to its investors and residents. One of them is the provision of the commercial area; this will allow the residents to grow financially, as they can...</p> 
             <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a></div>
-          </div>
+          </div> -->
 
         </div>
 
@@ -175,26 +207,31 @@
           <h2>Testimonials</h2>
           <p>Testimonials</p>
         </div>
-
+<?php 
+$testimonial=json_decode(home_testimonial(),true);
+?>
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
-
+ <?php 
+foreach($testimonial as $vals){
+  // 
+?>
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="<?php echo base_url()?>assets/web/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
+                  <img src="<?php echo base_url()?>resource/images/other_images/<?php echo $vals['testimonial_image'];?>" class="testimonial-img" alt="">
+                  <h3><?php echo $vals['name']; ?></h3>
+                  <h4><?php echo $vals['designation']; ?></h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                    <?php echo $vals['comments']; ?>
                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                   </p>
                 </div>
               </div>
             </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
+<?php } ?>
+           <!--  <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <img src="<?php echo base_url()?>assets/web/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
@@ -207,7 +244,7 @@
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-wrap">
@@ -222,7 +259,7 @@
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-wrap">
@@ -237,7 +274,7 @@
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-wrap">
@@ -252,7 +289,7 @@
                   </p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
 
           </div>
           <div class="swiper-pagination"></div>
@@ -308,9 +345,9 @@
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <img src="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/ZdJ6TBrwgQQ" title="Meray Humnasheen Episode 33 - Ahsan Khan - Hiba Bukhari [Eng Sub] 26th August 2022 - HAR PAL GEO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="img-fluid" allowfullscreen></iframe>
             <div class="portfolio-info">
-              <a href="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bi bi-zoom-in"></i></a>
+              <a href="https://www.youtube.com/embed/ZdJ6TBrwgQQ" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bi bi-zoom-in"></i></a>
               
             </div>
           </div>
@@ -364,14 +401,19 @@
         </div>
 
         <div class="row">
+<?php 
+$team=json_decode(home_team(),true);
 
+foreach($team as $vals){
+  // 
+?>
           <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="member" data-aos="zoom-in" data-aos-delay="100">
-              <img src="<?php echo base_url()?>assets/web/assets/img/team/team-1.jpg" class="img-fluid" alt="">
+              <img src="<?php echo base_url()?>resource/images/other_images/<?php echo $vals['team_image'];?>" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Walter White</h4>
-                  <span>Chief Executive Officer</span>
+                  <h4><?php echo $vals['name'];?></h4>
+                  <span><?php echo $vals['designation'];?></span>
                 </div>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
@@ -382,8 +424,8 @@
               </div>
             </div>
           </div>
-
-          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
+<?php } ?>
+         <!--  <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
             <div class="member" data-aos="zoom-in" data-aos-delay="200">
               <img src="<?php echo base_url()?>assets/web/assets/img/team/team-2.jpg" class="img-fluid" alt="">
               <div class="member-info">
@@ -435,7 +477,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
 
