@@ -122,5 +122,12 @@ $route['admin/feature/edit/(:any)'] = 'Feature/edit_feature';
 $route['admin/feature/delete/(:any)'] = 'Feature/delete_feature';
 /*****************FEATURE AREA END**************************/
 
+/*****************Home Slider **************************/
+$route['homeslider'] = 'Home_Slider';
+$route['homefeatures'] = 'Home_Features';
+$route['hometestimonial'] = 'Home_Testimonial';
+$route['hometeam'] = 'Home_Team';
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
