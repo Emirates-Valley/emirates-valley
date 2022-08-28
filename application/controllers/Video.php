@@ -88,16 +88,27 @@ class Video extends CI_Controller {
 			extract($_POST);
 			$this->form_validation->set_rules('title', 'Title', 'trim|required');
 			$this->form_validation->set_rules('description', 'Description', 'trim|required');
-			$this->form_validation->set_rules('embed_code', 'Embed Code', 'trim|required');
-			$this->form_validation->set_rules('video_file', 'File', 'callback_file_check');
+			if($gallery_type == 'Image'){
+				$this->form_validation->set_rules('video_file', 'File', 'callback_image_file_check');
+			} else if($gallery_type == 'Video'){
+				//$this->form_validation->set_rules('embed_code', 'Embed Code', 'trim|required');
+				$this->form_validation->set_rules('video_file', 'File', 'callback_file_check');
+			}
 			if($this->form_validation->run() != FALSE){
-				$insert_arr = array('user_id' => $this->userId,'title' => $title, 'description' => $description, 'embed_code' => $embed_code, 'status' => $status, 'dated' => date('Y-m-d H:i:s'));
+				$insert_arr = array('user_id' => $this->userId,'title' => $title, 'description' => $description, 'status' => $status, 'gallery_type' => $gallery_type, 'dated' => date('Y-m-d H:i:s'));
+				if($gallery_type == 'Video'){
+					$insert_arr['embed_code'] = $embed_code;
+				}	
 				$video_id = $this->Video_model->add_video($insert_arr);
 				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['video_file']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
-				$config['allowed_types'] = 'mp4';
+				if($gallery_type == 'Image'){
+					$config['allowed_types'] = 'jpg|png|jpeg';
+				} else if($gallery_type == 'Video'){
+					$config['allowed_types'] = 'mp4';	
+				}	
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
 				if($this->upload->do_upload('video_file'))
@@ -107,7 +118,7 @@ class Video extends CI_Controller {
 						'video_file' => $data['file_name']
 					);
 					$this->Video_model->edit_video($video_id,$img_arr);
-					$this->session->set_userdata('message_success','Video Added Successfully!');
+					$this->session->set_userdata('message_success','Gallery Added Successfully!');
 					redirect(base_url().'admin/video/listing',$data);
 				}
 			} 
@@ -124,16 +135,27 @@ class Video extends CI_Controller {
 			extract($_POST);
 			$this->form_validation->set_rules('title', 'Title', 'trim|required');
 			$this->form_validation->set_rules('description', 'Description', 'trim|required');
-			$this->form_validation->set_rules('embed_code', 'Embed Code', 'trim|required');
-			$this->form_validation->set_rules('video_file', 'File', 'callback_file_check');
+			if($gallery_type == 'Image'){
+				$this->form_validation->set_rules('video_file', 'File', 'callback_image_file_check');
+			} else if($gallery_type == 'Video'){
+				//$this->form_validation->set_rules('embed_code', 'Embed Code', 'trim|required');
+				$this->form_validation->set_rules('video_file', 'File', 'callback_file_check');
+			}
 			if($this->form_validation->run() != FALSE){
-				$update_arr = array('title' => $title, 'description' => $description, 'embed_code' => $embed_code, 'status' => $status);
+				$update_arr = array('title' => $title, 'description' => $description, 'status' => $status, 'gallery_type' => $gallery_type);
+				if($gallery_type == 'Video'){
+					$insert_arr['embed_code'] = $embed_code;
+				}
 				$this->Video_model->edit_video($video_id,$update_arr);
 				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['video_file']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
-				$config['allowed_types'] = 'mp4';
+				if($gallery_type == 'Image'){
+					$config['allowed_types'] = 'jpg|png|jpeg';
+				} else if($gallery_type == 'Video'){
+					$config['allowed_types'] = 'mp4';	
+				}
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
 				if($this->upload->do_upload('video_file'))
@@ -146,13 +168,29 @@ class Video extends CI_Controller {
 						'video_file' => $data['file_name']
 					);
 					$this->Video_model->edit_video($video_id,$img_arr);
-					$this->session->set_userdata('message_success','Video Updated Successfully!');
+					$this->session->set_userdata('message_success','Gallery Updated Successfully!');
 					redirect(base_url().'admin/video/listing',$data);
 				}
 			} 
 		} 
 		$data['main_content'] = 'admin/videos/edit';
 		$this->load->view('includes/template', $data);
+	}
+
+	public function image_file_check($str){
+		$allowed_mime_type_arr = array('image/jpeg','image/pjpeg','image/png','image/x-png');
+		$mime = get_mime_by_extension($_FILES['video_file']['name']);
+		if(isset($_FILES['video_file']['name']) && $_FILES['video_file']['name']!=""){
+			if(in_array($mime, $allowed_mime_type_arr)){
+				return true;
+			}else{
+				$this->form_validation->set_message('image_file_check', 'Please select only jpg/png file.');
+				return false;
+			}
+		}else{
+			$this->form_validation->set_message('image_file_check', 'Please choose a file to upload.');
+			return false;
+		}
 	}
 
 	public function file_check($str){
@@ -178,7 +216,7 @@ class Video extends CI_Controller {
 			@unlink(MEDIA_PATH.$video->video_file);
 		}
 		$this->Video_model->delete_video($this->uri->segment(4));
-		$this->session->set_userdata('message_success','Video Deleted Successfully!');
+		$this->session->set_userdata('message_success','Gallery Deleted Successfully!');
 		redirect(base_url().'admin/video/listing');
 	}
 
@@ -190,7 +228,7 @@ class Video extends CI_Controller {
 		$video_id = $this->input->post('video_id');
 		$updt_arr = array('status' => $this->input->post('status'));
 		$this->Video_model->edit_video($video_id,$updt_arr);
-		$this->session->set_userdata('message_success','Video Status Change Successfully!');
+		$this->session->set_userdata('message_success','Gallery Status Change Successfully!');
 		echo $this->session->userdata('message_success');
 	}
 }

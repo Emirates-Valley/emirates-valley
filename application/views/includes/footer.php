@@ -47,6 +47,19 @@
     } );
 </script>    
 <?php } ?>
+<?php if($this->uri->segment(2) == 'video') {?>
+<script>
+    function gallery_types(g_type){
+        if(g_type == 'Image'){
+            $('#video_gallery_label').text('Image File');
+            $('.video_gallery').hide();
+        } else if(g_type == 'Video'){
+            $('#video_gallery_label').text('Video File');
+            $('.video_gallery').show();
+        }
+    }
+</script>
+<?php } ?>    
 <script src="<?php echo base_url()?>assets/js/app.min.js"></script>
 </body>
 </html>
