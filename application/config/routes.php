@@ -122,6 +122,10 @@ $route['admin/feature/edit/(:any)'] = 'Feature/edit_feature';
 $route['admin/feature/delete/(:any)'] = 'Feature/delete_feature';
 /*****************FEATURE AREA END**************************/
 
+/*****************ABOUT MANAGEMENT START*************************/
+$route['admin/about'] = 'Page';
+/*****************ABOUT MANAGEMENT START*************************/
+
 /*****************Home Slider **************************/
 $route['homeslider'] = 'Home_Slider';
 $route['homefeatures'] = 'Home_Features';

@@ -12,7 +12,7 @@
 <!-- Main scripts -->
 <!-- App scripts -->
 <script src="<?php echo base_url()?>resource/vendors/select2/js/select2.min.js"></script>
-<?php if($this->uri->segment(3) == 'add' || $this->uri->segment(3) == 'edit') {?> 
+<?php if($this->uri->segment(3) == 'add' || $this->uri->segment(3) == 'edit' || $this->uri->segment(2) == 'about') {?> 
 <script src="<?php echo base_url()?>resource/vendors/ckeditor5/ckeditor.js"></script>
 <script>
     let editor;

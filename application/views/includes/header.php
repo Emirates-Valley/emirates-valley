@@ -164,7 +164,7 @@
                                 <a href="#"><i class="fa fa-address-book"></i>&nbsp;Contact Us Management</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-info-circle"></i>&nbsp;About Management</a>
+                                <a href="<?php echo base_url().'admin/about'?>"><i class="fa fa-info-circle"></i>&nbsp;About Management</a>
                             </li>
                         </ul>
                     </li>
