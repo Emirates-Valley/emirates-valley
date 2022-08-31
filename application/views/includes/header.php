@@ -135,7 +135,10 @@
                             <span class="fa fa-globe"></span>
                             <span>&nbsp;&nbsp;&nbsp;&nbsp;Website Frontend</span>
                         </a>
-                        <ul>
+                        <ul style="display:block">
+                            <li>
+                                <a href="<?php echo base_url().'admin/open/file'?>"><i class="fa fa-file"></i>&nbsp;Open File Management</a>
+                            </li>
                             <li>
                                 <a href="<?php echo base_url().'admin/slider/listing'?>"><i class="fa fa-sliders"></i>&nbsp;Slider Management</a>
                             </li>

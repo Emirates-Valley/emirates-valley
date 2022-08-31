@@ -5995,7 +5995,7 @@ body:not(.horizontal-navigation) .navigation .navigation-menu-body ul li > a + u
 }
 
 body:not(.horizontal-navigation) .navigation .navigation-menu-body ul li > a + ul li a {
-  padding-left: 65px;
+  padding-left: 55px;
   padding-top: 8px;
   padding-bottom: 8px;
 }

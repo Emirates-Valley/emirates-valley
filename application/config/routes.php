@@ -126,6 +126,14 @@ $route['admin/feature/delete/(:any)'] = 'Feature/delete_feature';
 $route['admin/about'] = 'Page';
 /*****************ABOUT MANAGEMENT START*************************/
 
+/*****************OPEN FORM MANAGEMENT START*************************/
+$route['admin/open/file'] = 'OpenForm';
+$route['admin/open/file/(:num)'] = 'OpenForm';
+$route['admin/open/file/add'] = 'OpenForm/open_form_add';
+$route['admin/open/file/edit/(:any)'] = 'OpenForm/open_form_edit';
+$route['admin/open/file/delete/(:any)'] = 'OpenForm/delete_open_file';
+/*****************OPEN FORM MANAGEMENT START*************************/
+
 /*****************Home Slider **************************/
 $route['homeslider'] = 'Home_Slider';
 $route['homefeatures'] = 'Home_Features';
