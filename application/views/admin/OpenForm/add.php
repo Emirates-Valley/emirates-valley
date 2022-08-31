@@ -28,10 +28,19 @@
                                             <div class="form-group">
                                                 <label>Dealer</label>
                                                 <select class="form-control" name="dealer_id">
-                                                    <option value="1" <?php echo (set_value('dealer_id') == '1' ? 'selected="selected"':'');?>>Test</option>
-                                                    <option value="2" <?php echo (set_value('dealer_id') == '2' ? 'selected="selected"':'');?>>Test 1</option>
+                                                    <?php 
+                                                        $dealers = get_active_dealers();
+                                                        if(!empty($dealers)){
+                                                            foreach($dealers as $dealer){
+                                                    ?>
+                                                                <option value="<?php echo $dealer->dealer_id?>" <?php echo (set_value('dealer_id') == $dealer->dealer_id ? 'selected="selected"':'');?>><?php echo $dealer->name;?></option>
+                                                    <?php            
+                                                            }
+                                                        }
+                                                    ?>
                                                 </select>
                                             </div>
+                                            <?php echo form_error('dealer_id', '<div class="alert alert-danger">', '</div>'); ?>
                                             <div class="form-group">
                                                 <label>App. Form Number</label>
                                                 <input type="text" class="form-control" value="<?php echo set_value('app_form_number')?>" name="app_form_number">

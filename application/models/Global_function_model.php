@@ -61,4 +61,17 @@ class Global_function_model extends CI_Model {
 			return json_encode($query->result());
 		}		
 	}
+
+	public function get_active_dealers()
+	{
+		$this->db->select('*');
+		$this->db->from('emiratesvalley_dealers');
+		$this->db->where('status', 'Active');
+		$this->db->order_by("dealer_id", "DESC");
+		$query = $this->db->get();
+		if($query->num_rows() > 0){
+
+			return $query->result();
+		}		
+	}
 }

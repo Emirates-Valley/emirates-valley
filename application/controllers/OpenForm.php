@@ -86,6 +86,7 @@ class OpenForm extends CI_Controller {
 	{
 		if($this->input->post('open_form_add') == 'open_form_add'){
 			extract($_POST);
+			$this->form_validation->set_rules('dealer_id', 'Dealer', 'trim|required');
 			$this->form_validation->set_rules('app_form_number', 'App. Form Number', 'trim|required');
 			$this->form_validation->set_rules('registration_number', 'Registration Number', 'trim|required');
 			$this->form_validation->set_rules('plot_size', 'Plot Size', 'trim|required');
@@ -142,6 +143,7 @@ class OpenForm extends CI_Controller {
 		$data['open_file'] = $this->OpenFile_model->get_open_file($file_id);
 		if($this->input->post('open_form_edit') == 'open_form_edit'){
 			extract($_POST);
+			$this->form_validation->set_rules('dealer_id', 'Dealer', 'trim|required');
 			$this->form_validation->set_rules('name', 'Name', 'trim|required');
 			$this->form_validation->set_rules('cnic', 'CNIC', 'trim|required');
 			$this->form_validation->set_rules('contact', 'Contact', 'trim|required');

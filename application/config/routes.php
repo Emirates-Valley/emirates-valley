@@ -134,6 +134,14 @@ $route['admin/open/file/edit/(:any)'] = 'OpenForm/open_form_edit';
 $route['admin/open/file/delete/(:any)'] = 'OpenForm/delete_open_file';
 /*****************OPEN FORM MANAGEMENT START*************************/
 
+/*****************DEALER AREA START*************************/
+$route['admin/dealer/listing'] = 'Dealer';
+$route['admin/dealer/listing/(:num)'] = 'Dealer';
+$route['admin/dealer/add'] = 'Dealer/add_dealer';
+$route['admin/dealer/edit/(:any)'] = 'Dealer/edit_dealer';
+$route['admin/dealer/delete/(:any)'] = 'Dealer/delete_dealer';
+/*****************DEALER AREA END**************************/
+
 /*****************Home Slider **************************/
 $route['homeslider'] = 'Home_Slider';
 $route['homefeatures'] = 'Home_Features';

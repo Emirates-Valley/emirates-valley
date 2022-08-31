@@ -42,3 +42,12 @@ if(!function_exists('home_team')){
     }
 
 }
+
+if(!function_exists('get_active_dealers')){
+    function get_active_dealers(){
+        $CI = & get_instance();
+        $CI->load->model('global_function_model');
+        return $CI->global_function_model->get_active_dealers();
+    }
+
+}
