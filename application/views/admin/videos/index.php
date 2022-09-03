@@ -117,8 +117,8 @@
                                                                 <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-right">
-                                                                <a class="dropdown-item" href="<?php echo base_url().'admin/video/edit/'.base64_encode($video->gallery_id)?>">Update Video</a>
-                                                                <a class="dropdown-item" href="<?php echo base_url().'admin/video/delete/'.base64_encode($video->gallery_id)?>">Delete Video</a>
+                                                                <a class="dropdown-item" href="<?php echo base_url().'admin/video/edit/'.base64_encode($video->gallery_id)?>">Update Gallery</a>
+                                                                <a class="dropdown-item" href="<?php echo base_url().'admin/video/delete/'.base64_encode($video->gallery_id)?>">Delete Gallery</a>
                                                             </div>
                                                         </div>
                                                     </td>

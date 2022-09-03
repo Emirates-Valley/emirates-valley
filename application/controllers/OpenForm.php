@@ -148,7 +148,9 @@ class OpenForm extends CI_Controller {
 			$this->form_validation->set_rules('cnic', 'CNIC', 'trim|required');
 			$this->form_validation->set_rules('contact', 'Contact', 'trim|required');
 			$this->form_validation->set_rules('address', 'Address', 'trim|required');
-			$this->form_validation->set_rules('logo_image', 'Image', 'callback_file_check');
+			if(isset($_FILES['logo_image']['name']) && $_FILES['logo_image']['name']!=""){
+				$this->form_validation->set_rules('logo_image', 'Image', 'callback_file_check');
+			}
 			if($this->form_validation->run() != FALSE){
 				$update_arr = array(
 					'dealer_id' => $dealer_id, 
@@ -176,9 +178,9 @@ class OpenForm extends CI_Controller {
 						'profile_photo' => $data['file_name']
 					);
 					$this->OpenFile_model->edit_open_file($file_id,$img_arr);
-					$this->session->set_userdata('message_success','Open File Updated Successfully!');
-					redirect(base_url().'admin/open/file',$data);
 				}
+				$this->session->set_userdata('message_success','Open File Updated Successfully!');
+				redirect(base_url().'admin/open/file',$data);
 			} 
 		} 
 		$data['main_content'] = 'admin/OpenForm/edit';

@@ -123,7 +123,9 @@ class Logo extends CI_Controller {
 			extract($_POST);
 			$this->form_validation->set_rules('website_name', 'Website Name', 'trim|required');
 			$this->form_validation->set_rules('description', 'Description', 'trim|required');
-			$this->form_validation->set_rules('logo_image', 'Image', 'callback_file_check');
+			if(isset($_FILES['logo_image']['name']) && $_FILES['logo_image']['name']!=""){ 
+				$this->form_validation->set_rules('logo_image', 'Image', 'callback_file_check');
+			}
 			if($this->form_validation->run() != FALSE){
 				$update_arr = array('website_name' => $website_name, 'description' => $description, 'status' => $status);
 				$this->Logo_model->edit_logo($logo_id,$update_arr);
@@ -144,9 +146,9 @@ class Logo extends CI_Controller {
 						'logo_image' => $data['file_name']
 					);
 					$this->Logo_model->edit_logo($logo_id,$img_arr);
-					$this->session->set_userdata('message_success','Logo Updated Successfully!');
-					redirect(base_url().'admin/logo/listing',$data);
 				}
+				$this->session->set_userdata('message_success','Logo Updated Successfully!');
+				redirect(base_url().'admin/logo/listing',$data);
 			} 
 		} 
 		$data['main_content'] = 'admin/logo/edit';

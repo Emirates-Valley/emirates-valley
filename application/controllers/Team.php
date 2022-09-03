@@ -130,7 +130,9 @@ class Team extends CI_Controller {
 			$this->form_validation->set_rules('designation', 'Designation', 'trim|required');
 			$this->form_validation->set_rules('phone', 'Phone', 'trim|callback_phone_exists|min_length[8]|max_length[15]');
 			$this->form_validation->set_rules('email', 'Email', 'trim|callback_email_exists');
-			$this->form_validation->set_rules('team_image', 'Image', 'callback_file_check');
+			if(isset($_FILES['team_image']['name']) && $_FILES['team_image']['name']!=""){
+				$this->form_validation->set_rules('team_image', 'Image', 'callback_file_check');
+			}
 			if($this->form_validation->run() != FALSE){
 				$update_arr = array('name' => $name, 'designation' => $designation, 'phone' => $phone, 'email' => $email, 'status' => $status);
 				$this->Team_model->edit_team($team_id,$update_arr);
@@ -151,9 +153,9 @@ class Team extends CI_Controller {
 						'team_image' => $data['file_name']
 					);
 					$this->Team_model->edit_team($team_id,$img_arr);
-					$this->session->set_userdata('message_success','Team Member Updated Successfully!');
-					redirect(base_url().'admin/team/listing',$data);
 				}
+				$this->session->set_userdata('message_success','Team Member Updated Successfully!');
+				redirect(base_url().'admin/team/listing',$data);
 			} 
 		} 
 		$data['main_content'] = 'admin/teams/edit';

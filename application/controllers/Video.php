@@ -136,10 +136,14 @@ class Video extends CI_Controller {
 			$this->form_validation->set_rules('title', 'Title', 'trim|required');
 			$this->form_validation->set_rules('description', 'Description', 'trim|required');
 			if($gallery_type == 'Image'){
-				$this->form_validation->set_rules('video_file', 'File', 'callback_image_file_check');
+				if(isset($_FILES['video_file']['name']) && $_FILES['video_file']['name']!=""){
+					$this->form_validation->set_rules('video_file', 'File', 'callback_image_file_check');
+				}
 			} else if($gallery_type == 'Video'){
 				//$this->form_validation->set_rules('embed_code', 'Embed Code', 'trim|required');
-				$this->form_validation->set_rules('video_file', 'File', 'callback_file_check');
+				if(isset($_FILES['video_file']['name']) && $_FILES['video_file']['name']!=""){
+					$this->form_validation->set_rules('video_file', 'File', 'callback_file_check');
+				}
 			}
 			if($this->form_validation->run() != FALSE){
 				$update_arr = array('title' => $title, 'description' => $description, 'status' => $status, 'gallery_type' => $gallery_type);
@@ -168,9 +172,9 @@ class Video extends CI_Controller {
 						'video_file' => $data['file_name']
 					);
 					$this->Video_model->edit_video($video_id,$img_arr);
-					$this->session->set_userdata('message_success','Gallery Updated Successfully!');
-					redirect(base_url().'admin/video/listing',$data);
 				}
+				$this->session->set_userdata('message_success','Gallery Updated Successfully!');
+				redirect(base_url().'admin/video/listing',$data);
 			} 
 		} 
 		$data['main_content'] = 'admin/videos/edit';

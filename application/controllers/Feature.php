@@ -123,7 +123,9 @@ class Feature extends CI_Controller {
 			extract($_POST);
 			$this->form_validation->set_rules('title', 'Title', 'trim|required');
 			$this->form_validation->set_rules('description', 'Description', 'trim|required');
-			$this->form_validation->set_rules('feature_image', 'Image', 'callback_file_check');
+			if(isset($_FILES['feature_image']['name']) && $_FILES['feature_image']['name']!=""){
+				$this->form_validation->set_rules('feature_image', 'Image', 'callback_file_check');
+			}
 			if($this->form_validation->run() != FALSE){
 				$update_arr = array('title' => $title, 'description' => $description, 'status' => $status);
 				$this->Feature_model->edit_feature($feature_id,$update_arr);
@@ -144,9 +146,9 @@ class Feature extends CI_Controller {
 						'feature_image' => $data['file_name']
 					);
 					$this->Feature_model->edit_feature($feature_id,$img_arr);
-					$this->session->set_userdata('message_success','Features Updated Successfully!');
-					redirect(base_url().'admin/feature/listing',$data);
 				}
+				$this->session->set_userdata('message_success','Features Updated Successfully!');
+				redirect(base_url().'admin/feature/listing',$data);
 			} 
 		} 
 		$data['main_content'] = 'admin/feature/edit';
