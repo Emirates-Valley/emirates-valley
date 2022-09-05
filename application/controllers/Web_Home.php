@@ -60,4 +60,12 @@ class Web_Home extends CI_Controller {
         $this->load->view('includes/web_template', $data);
 		
 	}
+
+	public function privacy_policy()
+	{
+		$data['web_main_content'] = 'web/about_us';
+        $this->load->view('includes/web_template', $data);
+		
+	}
+
 }
