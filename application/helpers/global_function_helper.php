@@ -25,7 +25,6 @@ if(!function_exists('userInfo')){
         $CI->load->model('global_function_model');
         return $CI->global_function_model->userInfo($userId);
     }
-
 }
 
 if(!function_exists('home_slider')){
@@ -34,7 +33,6 @@ if(!function_exists('home_slider')){
         $CI->load->model('global_function_model');
         return $CI->global_function_model->slider_listing();
     }
-    
 }
 
 if(!function_exists('home_features')){
@@ -43,15 +41,14 @@ if(!function_exists('home_features')){
         $CI->load->model('global_function_model');
         return $CI->global_function_model->features_listing();
     }
-
 }
+
 if(!function_exists('home_testimonial')){
     function home_testimonial(){
         $CI = & get_instance();
         $CI->load->model('global_function_model');
         return $CI->global_function_model->testimonial_listing();
     }
-
 }
 
 if(!function_exists('home_team')){
@@ -60,15 +57,20 @@ if(!function_exists('home_team')){
         $CI->load->model('global_function_model');
         return $CI->global_function_model->team_listing();
     }
-
 }
 
+<<<<<<< HEAD
+}
+
+=======
+>>>>>>> remotes/origin/main
 if(!function_exists('get_active_dealers')){
     function get_active_dealers(){
         $CI = & get_instance();
         $CI->load->model('global_function_model');
         return $CI->global_function_model->get_active_dealers();
     }
+<<<<<<< HEAD
 
 }
 
@@ -95,4 +97,6 @@ if(!function_exists('get_active_logo')){
         $CI->load->model('global_function_model');
         return $CI->global_function_model->get_active_logo();
     }
+=======
+>>>>>>> remotes/origin/main
 }
