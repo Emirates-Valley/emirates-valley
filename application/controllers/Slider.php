@@ -123,7 +123,9 @@ class Slider extends CI_Controller {
 			extract($_POST);
 			$this->form_validation->set_rules('title', 'Title', 'trim|required');
 			$this->form_validation->set_rules('description', 'Description', 'trim|required');
-			$this->form_validation->set_rules('slider_image', 'Image', 'callback_file_check');
+			if(isset($_FILES['slider_image']['name']) && $_FILES['slider_image']['name']!=""){
+				$this->form_validation->set_rules('slider_image', 'Image', 'callback_file_check');
+			}
 			if($this->form_validation->run() != FALSE){
 				$update_arr = array('title' => $title, 'description' => $description, 'status' => $status);
 				$this->Slider_model->edit_slider($slider_id,$update_arr);
@@ -144,9 +146,9 @@ class Slider extends CI_Controller {
 						'slider_image' => $data['file_name']
 					);
 					$this->Slider_model->edit_slider($slider_id,$img_arr);
-					$this->session->set_userdata('message_success','Slider Updated Successfully!');
-					redirect(base_url().'admin/slider/listing',$data);
 				}
+				$this->session->set_userdata('message_success','Slider Updated Successfully!');
+				redirect(base_url().'admin/slider/listing',$data);
 			} 
 		} 
 		$data['main_content'] = 'admin/sliders/edit';

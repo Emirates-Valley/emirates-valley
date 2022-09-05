@@ -90,7 +90,7 @@ class News extends CI_Controller {
 			$this->form_validation->set_rules('description', 'Description', 'trim|required');
 			$this->form_validation->set_rules('news_image', 'Image', 'callback_file_check');
 			if($this->form_validation->run() != FALSE){
-				$insert_arr = array('user_id' => $this->userId,'news_title' => $news_title, 'description' => $description, 'status' => $status, 'news_type' => $news_type, 'dated' => date('Y-m-d H:i:s'));
+				$insert_arr = array('user_id' => $this->userId,'news_title' => $news_title,'slug' => title_slug($news_title), 'description' => $description, 'status' => $status, 'news_type' => $news_type, 'dated' => date('Y-m-d H:i:s'));
 				$news_id = $this->News_model->add_news($insert_arr);
 				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['news_image']['name']);
@@ -123,9 +123,11 @@ class News extends CI_Controller {
 			extract($_POST);
 			$this->form_validation->set_rules('news_title', 'News Title', 'trim|required');
 			$this->form_validation->set_rules('description', 'Description', 'trim|required');
-			$this->form_validation->set_rules('news_image', 'Image', 'callback_file_check');
+			if(isset($_FILES['news_image']['name']) && $_FILES['news_image']['name']!=""){
+				$this->form_validation->set_rules('news_image', 'Image', 'callback_file_check');
+			}
 			if($this->form_validation->run() != FALSE){
-				$update_arr = array('news_title' => $news_title, 'description' => $description, 'status' => $status, 'news_type' => $news_type);
+				$update_arr = array('news_title' => $news_title,'slug' => title_slug($news_title), 'description' => $description, 'status' => $status, 'news_type' => $news_type);
 				$this->News_model->edit_news($news_id,$update_arr);
 				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['news_image']['name']);
@@ -144,9 +146,9 @@ class News extends CI_Controller {
 						'news_image' => $data['file_name']
 					);
 					$this->News_model->edit_news($news_id,$img_arr);
-					$this->session->set_userdata('message_success','News Updated Successfully!');
-					redirect(base_url().'admin/news/listing',$data);
 				}
+				$this->session->set_userdata('message_success','News Updated Successfully!');
+				redirect(base_url().'admin/news/listing',$data);
 			} 
 		} 
 		$data['main_content'] = 'admin/news/edit';

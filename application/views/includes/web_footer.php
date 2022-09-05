@@ -22,9 +22,9 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="?php echo base_url()?>">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="about_us">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="features">Features</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
@@ -63,7 +63,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Emirates Valley</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Emirates Valley PVT Limited</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

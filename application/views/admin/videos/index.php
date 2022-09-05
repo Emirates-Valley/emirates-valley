@@ -2,14 +2,14 @@
     <div class="content ">            
         <div class="page-header">
             <div>
-                <h3>Manage Video Gallery 
-                <a href="<?php echo base_url().'admin/video/add'?>" style="margin-right:10px" class="btn btn-outline-primary pull-right">Add Video</a></h3>
+                <h3>Manage Gallery 
+                <a href="<?php echo base_url().'admin/video/add'?>" style="margin-right:10px" class="btn btn-outline-primary pull-right">Add Image / Video</a></h3>
                 <nav aria-label="breadcrumb" class="d-flex align-items-start">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="<?php echo base_url().'admin/dashboard'?>">Home</a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Manage Video Gallery</li>
+                        <li class="breadcrumb-item active" aria-current="page">Manage Gallery</li>
                     </ol>
                 </nav>
                 <br />
@@ -58,7 +58,7 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th scope="col">Video File</th>
+                                                <th scope="col">File</th>
                                                 <th scope="col">Title</th>
                                                 <th scope="col">status</th>
                                                 <th scope="col">Dated</th>
@@ -76,12 +76,18 @@
                                                             <?php 
                                                                 if($video->video_file != ''){
                                                                     $video_file = base_url().MEDIA_PATH.$video->video_file;
+                                                                    if($video->gallery_type == 'Video'){
                                                             ?>        
-                                                                    <video width="100" height="70" controls>
-                                                                        <source src="<?php echo $video_file?>" type="video/mp4">
-                                                                        <source src="<?php echo $video_file?>" type="video/ogg">
-                                                                    </video>
-                                                            <?php    
+                                                                        <video width="100" height="70" controls>
+                                                                            <source src="<?php echo $video_file?>" type="video/mp4">
+                                                                            <source src="<?php echo $video_file?>" type="video/ogg">
+                                                                        </video>
+                                                            <?php
+                                                                    } elseif($video->gallery_type == 'Image'){
+                                                            ?>
+                                                                        <img src="<?php echo $video_file?>"  class="rounded-circle" alt="<?php echo $video->title?>">
+                                                            <?php            
+                                                                    }    
                                                                 } else {
                                                                     $video_file = base_url().'assets/media/image/user/man_avatar3.jpg';
                                                             ?>
@@ -111,8 +117,8 @@
                                                                 <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-right">
-                                                                <a class="dropdown-item" href="<?php echo base_url().'admin/video/edit/'.base64_encode($video->gallery_id)?>">Update Video</a>
-                                                                <a class="dropdown-item" href="<?php echo base_url().'admin/video/delete/'.base64_encode($video->gallery_id)?>">Delete Video</a>
+                                                                <a class="dropdown-item" href="<?php echo base_url().'admin/video/edit/'.base64_encode($video->gallery_id)?>">Update Gallery</a>
+                                                                <a class="dropdown-item" href="<?php echo base_url().'admin/video/delete/'.base64_encode($video->gallery_id)?>">Delete Gallery</a>
                                                             </div>
                                                         </div>
                                                     </td>

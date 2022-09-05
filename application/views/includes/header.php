@@ -135,7 +135,10 @@
                             <span class="fa fa-globe"></span>
                             <span>&nbsp;&nbsp;&nbsp;&nbsp;Website Frontend</span>
                         </a>
-                        <ul>
+                        <ul style="display:block">
+                            <li>
+                                <a href="<?php echo base_url().'admin/open/file'?>"><i class="fa fa-file"></i>&nbsp;Open File Management</a>
+                            </li>
                             <li>
                                 <a href="<?php echo base_url().'admin/slider/listing'?>"><i class="fa fa-sliders"></i>&nbsp;Slider Management</a>
                             </li>
@@ -143,10 +146,13 @@
                                 <a href="<?php echo base_url().'admin/logo/listing'?>"><i class="fa fa-picture-o"></i>&nbsp;Logo Management</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url().'admin/video/listing'?>"><i class="fa fa-video-camera"></i>&nbsp;Video Gallery Management</a>
+                                <a href="<?php echo base_url().'admin/video/listing'?>"><i class="fa fa-video-camera"></i>&nbsp;Gallery Management</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url().'admin/team/listing'?>"><i class="fa fa-users"></i>&nbsp;Team Management</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url().'admin/dealer/listing'?>"><i class="fa fa-users"></i>&nbsp;Dealer Management</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url().'admin/payment/listing'?>"><i class="fa fa-credit-card"></i>&nbsp;Payment Plan Management</a>
@@ -164,7 +170,7 @@
                                 <a href="#"><i class="fa fa-address-book"></i>&nbsp;Contact Us Management</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-info-circle"></i>&nbsp;About Management</a>
+                                <a href="<?php echo base_url().'admin/about'?>"><i class="fa fa-info-circle"></i>&nbsp;About Management</a>
                             </li>
                         </ul>
                     </li>

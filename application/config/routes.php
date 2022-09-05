@@ -50,6 +50,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'Web_Home';
+$route['latest_news'] = 'Web_Home/news_listing_home';
+$route['features'] = 'Web_Home/features_detials';
+$route['contact_us'] = 'Web_Home/contact_us';
+$route['news_details'] = 'Web_Home/news_details';
+$route['about_us'] = 'Web_Home/about_us';
 
 /*****************ADMIN AREA START*************************/
 $route['admin/login'] = 'home/login';
@@ -122,11 +127,33 @@ $route['admin/feature/edit/(:any)'] = 'Feature/edit_feature';
 $route['admin/feature/delete/(:any)'] = 'Feature/delete_feature';
 /*****************FEATURE AREA END**************************/
 
+/*****************ABOUT MANAGEMENT START*************************/
+$route['admin/about'] = 'Page';
+/*****************ABOUT MANAGEMENT START*************************/
+
+/*****************OPEN FORM MANAGEMENT START*************************/
+$route['admin/open/file'] = 'OpenForm';
+$route['admin/open/file/(:num)'] = 'OpenForm';
+$route['admin/open/file/add'] = 'OpenForm/open_form_add';
+$route['admin/open/file/edit/(:any)'] = 'OpenForm/open_form_edit';
+$route['admin/open/file/delete/(:any)'] = 'OpenForm/delete_open_file';
+/*****************OPEN FORM MANAGEMENT START*************************/
+
+/*****************DEALER AREA START*************************/
+$route['admin/dealer/listing'] = 'Dealer';
+$route['admin/dealer/listing/(:num)'] = 'Dealer';
+$route['admin/dealer/add'] = 'Dealer/add_dealer';
+$route['admin/dealer/edit/(:any)'] = 'Dealer/edit_dealer';
+$route['admin/dealer/delete/(:any)'] = 'Dealer/delete_dealer';
+/*****************DEALER AREA END**************************/
+
 /*****************Home Slider **************************/
 $route['homeslider'] = 'Home_Slider';
 $route['homefeatures'] = 'Home_Features';
 $route['hometestimonial'] = 'Home_Testimonial';
 $route['hometeam'] = 'Home_Team';
+$route['homegallery'] = 'Home_gallery';
+$route['homenews'] = 'Home_news';
 
 
 $route['404_override'] = '';

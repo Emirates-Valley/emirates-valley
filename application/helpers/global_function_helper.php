@@ -1,4 +1,24 @@
 <?php 
+if(!function_exists('title_slug')) {
+    function title_slug($text){
+        // replace non letter or digits by -
+        $text = preg_replace('~[^\pL\d]+~u', '-', $text);
+        // transliterate
+        $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+        // remove unwanted characters
+        $text = preg_replace('~[^-\w]+~', '', $text);
+        // trim
+        $text = trim($text, '-');
+        // remove duplicate -
+        $text = preg_replace('~-+~', '-', $text);
+        // lowercase
+        $text = strtolower($text);
+        if (empty($text)) {
+            return 'n-a';
+        }
+        return $text;
+    }
+}
 if(!function_exists('userInfo')){
     function userInfo($userId){
         $CI = & get_instance();
@@ -41,4 +61,38 @@ if(!function_exists('home_team')){
         return $CI->global_function_model->team_listing();
     }
 
+}
+
+if(!function_exists('get_active_dealers')){
+    function get_active_dealers(){
+        $CI = & get_instance();
+        $CI->load->model('global_function_model');
+        return $CI->global_function_model->get_active_dealers();
+    }
+
+}
+
+if(!function_exists('get_active_gallery')){
+    function get_active_gallery(){
+        $CI = & get_instance();
+        $CI->load->model('global_function_model');
+        return $CI->global_function_model->get_active_gallery();
+    }
+
+}
+
+if(!function_exists('get_active_news')){
+    function get_active_news(){
+        $CI = & get_instance();
+        $CI->load->model('global_function_model');
+        return $CI->global_function_model->get_active_news();
+    }
+
+}
+if(!function_exists('get_active_logo')){
+    function get_active_logo(){
+        $CI = & get_instance();
+        $CI->load->model('global_function_model');
+        return $CI->global_function_model->get_active_logo();
+    }
 }

@@ -125,8 +125,9 @@ class Testimonial extends CI_Controller {
 			$this->form_validation->set_rules('name', 'Name', 'trim|required');
 			$this->form_validation->set_rules('designation','Designation','trim|required');
 			$this->form_validation->set_rules('comments', 'Comments', 'trim|required');
-			$this->form_validation->set_rules('testimonial_image', 'Image', 'callback_file_check');
-			//echo $this->form_validation->run();exit;
+			if(isset($_FILES['testimonial_image']['name']) && $_FILES['testimonial_image']['name']!=""){
+				$this->form_validation->set_rules('testimonial_image', 'Image', 'callback_file_check');
+			}
 			if($this->form_validation->run() != FALSE){
 				$update_arr = array('name' => $name, 'designation' => $designation, 'comments' => $comments, 'status' => $status);
 				$this->Testimonial_model->edit_testimonial($testimonial_id,$update_arr);
@@ -147,9 +148,9 @@ class Testimonial extends CI_Controller {
 						'testimonial_image' => $data['file_name']
 					);
 					$this->Testimonial_model->edit_testimonial($testimonial_id,$img_arr);
-					$this->session->set_userdata('message_success','Testimonial Updated Successfully!');
-					redirect(base_url().'admin/testimonial/listing',$data);
 				}
+				$this->session->set_userdata('message_success','Testimonial Updated Successfully!');
+				redirect(base_url().'admin/testimonial/listing',$data);
 			} 
 		} 
 		$data['main_content'] = 'admin/testimonials/edit';
