@@ -79,7 +79,18 @@ foreach($sliders as $vals){
   </section><!-- End Hero -->
 
   <main id="main">
-	<section id="clients" class="clients section-bg"><div class="container"><div class="row aos-init aos-animate" data-aos="zoom-in"><div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div><div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div><div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div><div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div><div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div><div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div></div></div></section>
+<section id="clients" class="clients section-bg">
+   <div class="container">
+      <div class="row aos-init aos-animate" data-aos="zoom-in">
+         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img src="<?php echo base_url()?>assets/web/assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img src="<?php echo base_url()?>assets/web/assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img src="<?php echo base_url()?>assets/web/assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img src="<?php echo base_url()?>assets/web/assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img src="<?php echo base_url()?>assets/web/assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"> <img src="<?php echo base_url()?>assets/web/assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+      </div>
+   </div>
+</section>
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us section-bg">
       <div class="container-fluid" data-aos="fade-up">
@@ -93,9 +104,9 @@ foreach($sliders as $vals){
           <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
 
             <div class="content">
-              <h3><strong>WHY SMART CITY</strong></h3>
+              <h3><strong>WHY Emirates Valley</strong></h3>
               <p>
-                Capital Smart City is a new eco-friendly destination with an exclusive designated interchange on motorway (M2). A grand entrance with 18-Lanes (400 Ft. wide) central boulevard just 5-7 minutes away from New Islamabad International Airport.
+                M_1 motorway !!! Emirates valley site just 5-7 minutes away from Fahtejang CPEC interchange. Just 10 minutes away from New Islamabad International Airport.
               </p>
             </div>
 
@@ -147,12 +158,10 @@ foreach($sliders as $vals){
           <h2>FEATURES</h2>
           <p>Check our FEATURES</p>
         </div>
-<?php 
 
-$features=json_decode(home_features(),true);
-?>
         <div class="row">
-          <?php 
+<?php 
+$features=json_decode(home_features(),true);
 foreach($features as $vals){
   // 
 ?>
@@ -161,39 +170,10 @@ foreach($features as $vals){
               <div class="icon mb-3"><img style="width: 64px;" src="<?php echo base_url()?>resource/images/other_images/<?php echo $vals['feature_image'];?>"></div>
             <h4><?php echo $vals['title']; ?></h4>
             <p><?php echo $vals['description']; ?></p>
-             <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a></div>
+             <a href="features" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a></div>
           </div>
 <?php } ?>
-          <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="service-item position-relative"><div class="icon mb-3"> <img src="<?php echo base_url()?>assets/web/assets/img/services/icon-karma.svg"></div><h4>PRIME LOCATION</h4>
-            <p>This housing society’s location is the main feature as it is close to Chakri Interchange on M2-Motorway and Islamabad International Airport. Moreover, it is just 5 Km away from Rawalpindi Rind Road...</p> 
-            <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a></div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="service-item position-relative"><div class="icon mb-3"><img src="<?php echo base_url()?>assets/web/assets/img/services/icon-team-builder.svg"></div><h4>GATED COMMUNITY</h4>
-            <p>A blue world city is a beautiful housing society that aims to provide high-quality living standards to all investors and residents. And to give the sense of security, the housing society is fully...</p> 
-            <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a></div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="service-item position-relative"><div class="icon mb-3"> <img src="<?php echo base_url()?>assets/web/assets/img/services/icon-team-builder.svg"></div><h4>BLUE WORLD TRADE CENTER</h4>
-            <p>The blue world trade center is the latest and unique infrastructure available to facilitate investors of Pakistan in several ways. Moreover, it will be a center for Pakistan’s real estate business...</p> 
-            <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a></div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="service-item position-relative"><div class="icon mb-3"> <img src="<?php echo base_url()?>assets/web/assets/img/services/icon-karma.svg"></div><h4>WATER THEME PARK</h4>
-            <p>This housing society facilitates the residents and the tourists around the country by its unique sites. One of the best features is the water theme park. Moreover, the Guangzhou Haisan...</p> 
-            <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a></div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="service-item position-relative"><div class="icon mb-3"> <img src="<?php echo base_url()?>assets/web/assets/img/services/icon-calculator.svg"></div><h4>COMMERCIAL AREA</h4>
-            <p>The housing society provides tons of amenities to its investors and residents. One of them is the provision of the commercial area; this will allow the residents to grow financially, as they can...</p> 
-            <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a></div>
-          </div> -->
-
+         
         </div>
 
       </div>
@@ -231,66 +211,7 @@ foreach($testimonial as $vals){
               </div>
             </div><!-- End testimonial item -->
 <?php } ?>
-           <!--  <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="<?php echo base_url()?>assets/web/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="<?php echo base_url()?>assets/web/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="<?php echo base_url()?>assets/web/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="<?php echo base_url()?>assets/web/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div> -->
-
+         
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -309,82 +230,24 @@ foreach($testimonial as $vals){
           <p>Check our LATEST DEVELOPMENT</p>
         </div>
 
-        <!-- <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div> -->
+      
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
+<?php 
+$active_gallery=json_decode(get_active_gallery(),true);
+foreach($active_gallery as $vals){
+?>
           <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <img src="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+            <img src="<?php echo base_url()?>resource/images/other_images/<?php echo $vals['video_file'];?>" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <a href="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bi bi-zoom-in"></i></a>
+              <a href="<?php echo base_url()?>resource/images/other_images/<?php echo $vals['video_file'];?>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bi bi-zoom-in"></i></a>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-            <img src="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <a href="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bi bi-zoom-in"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <img src="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <a href="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bi bi-zoom-in"></i></a>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <iframe width="640" height="360" src="https://www.youtube.com/embed/ZdJ6TBrwgQQ" title="Meray Humnasheen Episode 33 - Ahsan Khan - Hiba Bukhari [Eng Sub] 26th August 2022 - HAR PAL GEO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="img-fluid" allowfullscreen></iframe>
-            <div class="portfolio-info">
-              <a href="https://www.youtube.com/embed/ZdJ6TBrwgQQ" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bi bi-zoom-in"></i></a>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-            <img src="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <a href="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bi bi-zoom-in"></i></a>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <img src="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-
-              <a href="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bi bi-zoom-in"></i></a>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <img src="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <a href="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bi bi-zoom-in"></i></a>
-             
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <img src="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <a href="<?php echo base_url()?>assets/web/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bi bi-zoom-in"></i></a>
-              
-            </div>
-          </div>
-
+         
+<?php 
+}
+?>
 
         </div>
 
@@ -425,62 +288,10 @@ foreach($team as $vals){
             </div>
           </div>
 <?php } ?>
-         <!--  <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="member" data-aos="zoom-in" data-aos-delay="200">
-              <img src="<?php echo base_url()?>assets/web/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Product Manager</span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
-            <div class="member" data-aos="zoom-in" data-aos-delay="300">
-              <img src="<?php echo base_url()?>assets/web/assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>William Anderson</h4>
-                  <span>CTO</span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.3s">
-            <div class="member" data-aos="zoom-in" data-aos-delay="400">
-              <img src="<?php echo base_url()?>assets/web/assets/img/team/team-4.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Amanda Jepson</h4>
-                  <span>Accountant</span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> -->
+        
 
         </div>
 
       </div>
     </section><!-- End Team Section -->
-</main><!-- End #main -->	
+</main><!-- End #main --> 

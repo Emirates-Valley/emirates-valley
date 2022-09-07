@@ -14,6 +14,9 @@ class OpenFile_model extends CI_Model {
 			$this->db->or_like('cnic',$this->session->userdata('opnsearch'));
 			$this->db->or_like('contact',$this->session->userdata('opnsearch'));
 		}
+		if($limit!=''){
+			$this->db->limit($limit, $start);
+		}
 		$query = $this->db->get();
 		if($query->num_rows() > 0){
 			return $query->result();
@@ -45,6 +48,21 @@ class OpenFile_model extends CI_Model {
 	{
 		$this->db->where('file_id',base64_decode($file_id));
 		$this->db->delete('emiratesvalley_open_file');
+	}
+
+	public function add_qrcode($data)
+	{
+		$this->db->insert('emiratesvalley_file_qrcode',$data);
+		return $this->db->insert_id();
+	}
+
+	public function chk_qrcode_file($file_id)
+	{
+		$this->db->select('*');
+		$this->db->from('emiratesvalley_file_qrcode');
+		$this->db->where('file_id',$file_id);
+		$res = $this->db->get();
+		return $res->row();
 	}
 
 }

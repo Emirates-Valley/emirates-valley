@@ -74,4 +74,43 @@ class Global_function_model extends CI_Model {
 			return $query->result();
 		}		
 	}
+
+	public function get_active_gallery()
+	{
+		$this->db->select('*');
+		$this->db->from('emiratesvalley_video_gallery');
+		$this->db->where('status', 'Active');
+		$this->db->order_by("gallery_id", "DESC");
+		$query = $this->db->get();
+		if($query->num_rows() > 0){
+
+			return json_encode($query->result());
+		}		
+	}
+	public function get_active_news()
+	{
+		$this->db->select('*');
+		$this->db->from('emiratesvalley_news');
+		$this->db->where('status', 'Active');
+		$this->db->where('news_type', 'News');
+		$this->db->order_by("news_id", "DESC");
+		$query = $this->db->get();
+		if($query->num_rows() > 0){
+
+			return json_encode($query->result());
+		}		
+	}
+	public function get_active_logo()
+	{
+		$this->db->select('*');
+		$this->db->from('emiratesvalley_logo');
+		$this->db->where('status', 'Active');
+		$this->db->order_by("logo_id", "DESC");
+		$query = $this->db->get();
+		if($query->num_rows() > 0){
+
+			return json_encode($query->result());
+		}		
+	}
+
 }

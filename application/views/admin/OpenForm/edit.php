@@ -43,27 +43,27 @@
                                             <?php echo form_error('dealer_id', '<div class="alert alert-danger">', '</div>'); ?>
                                             <div class="form-group">
                                                 <label>App. Form Number</label>
-                                                <input type="text" class="form-control" value="<?php echo $open_file->app_form_number?>" readonly name="app_form_number">
+                                                <input type="text" class="form-control" value="<?php echo $open_file->app_form_number?>" <?php echo ($open_file->app_form_number)?'readonly':''; ?> name="app_form_number">
                                             </div>
                                             <?php echo form_error('app_form_number', '<div class="alert alert-danger">', '</div>'); ?>
                                             <div class="form-group">
                                                 <label>Registration Number</label>
-                                                <input type="text" class="form-control" value="<?php echo $open_file->registration_number?>" readonly name="registration_number">
+                                                <input type="text" class="form-control" value="<?php echo $open_file->registration_number?>" <?php echo ($open_file->registration_number)?'readonly':''; ?> name="registration_number">
                                             </div>
                                             <?php echo form_error('registration_number', '<div class="alert alert-danger">', '</div>'); ?>
                                             <div class="form-group">
                                                 <label>Plot Size</label>
-                                                <input type="text" class="form-control" value="<?php echo $open_file->plot_size?>" readonly name="plot_size">
+                                                <input type="text" class="form-control" value="<?php echo $open_file->plot_size?>" <?php echo ($open_file->plot_size)?'readonly':''; ?> name="plot_size">
                                             </div>
                                             <?php echo form_error('plot_size', '<div class="alert alert-danger">', '</div>'); ?>
                                             <div class="form-group">
                                                 <label>Plot Type</label>
-                                                <input type="text" class="form-control" value="<?php echo $open_file->plot_type?>" readonly name="plot_type">
+                                                <input type="text" class="form-control" value="<?php echo $open_file->plot_type?>" <?php echo ($open_file->plot_type)?'readonly':''; ?> name="plot_type">
                                             </div>
                                             <?php echo form_error('plot_type', '<div class="alert alert-danger">', '</div>'); ?>
                                             <div class="form-group">
                                                 <label>Security Code</label>
-                                                <input type="text" class="form-control" value="<?php echo $open_file->security_code?>" readonly name="security_code">
+                                                <input type="text" class="form-control" value="<?php echo $open_file->security_code?>" <?php echo ($open_file->security_code)?'readonly':''; ?> name="security_code">
                                             </div>
                                             <?php echo form_error('security_code', '<div class="alert alert-danger">', '</div>'); ?>
                                             <div class="form-group">
@@ -104,13 +104,17 @@
                                             </div>    
                                             <?php echo form_error('logo_image', '<div class="alert alert-danger">', '</div>'); ?> 
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <div class="custom-file">
-                                                    <img src="<?php echo base_url().MEDIA_PATH.$open_file->profile_photo?>" style="width:100px" />
+                                        <?php 
+                                            if($open_file->profile_photo != ''){
+                                        ?>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <div class="custom-file">
+                                                            <img src="<?php echo base_url().'intimation_letter/'.$open_file->profile_photo?>" style="width:100px" />
+                                                        </div>
+                                                    </div>    
                                                 </div>
-                                            </div>    
-                                        </div>
+                                        <?php } ?>
                                     </div>
                                     <br />
                                     <br />

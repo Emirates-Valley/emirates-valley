@@ -9,6 +9,9 @@ class Feature_model extends CI_Model {
 		if($this->session->userdata('featuresearch') != ''){
 			$this->db->like('title',$this->session->userdata('featuresearch'));
 		}
+		if($limit!=''){
+			$this->db->limit($limit, $start);
+		}
 		$query = $this->db->get();
 		if($query->num_rows() > 0){
 			return $query->result();

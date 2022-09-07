@@ -41,7 +41,7 @@ class OpenForm extends CI_Controller {
 		$config["base_url"] = base_url()."admin/open/file";
 		$config["total_rows"] = $total_rows;
         $config["per_page"] = 25;
-        $config["uri_segment"] = 3;
+        $config["uri_segment"] = 4;
         $config['full_tag_open'] = "<ul class='pagination'>";
 	    $config['full_tag_close'] = '</ul>';
 	    $config['num_tag_open'] = '<li class="page-item page-link">';
@@ -65,7 +65,7 @@ class OpenForm extends CI_Controller {
 
         $this->pagination->initialize($config);
 
-        $page = $this->uri->segment(3);
+        $page = $this->uri->segment(4);
 
         $data["links"] = $this->pagination->create_links();
 		$data['openfiles'] = $this->OpenFile_model->openfile_listing($config["per_page"], $page);
@@ -114,11 +114,11 @@ class OpenForm extends CI_Controller {
 					'dated' => date('Y-m-d H:i:s')
 				);
 				$file_id = $this->OpenFile_model->add_open_file($insert_arr);
-				$target_dir = MEDIA_PATH;
+				$target_dir = 'intimation_letter/';
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['logo_image']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
-				$config['allowed_types'] = 'jpg|png|jpeg';
+				$config['allowed_types'] = 'jpg';
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
 				if($this->upload->do_upload('logo_image'))
@@ -154,6 +154,11 @@ class OpenForm extends CI_Controller {
 			if($this->form_validation->run() != FALSE){
 				$update_arr = array(
 					'dealer_id' => $dealer_id, 
+					'app_form_number' => $app_form_number, 
+					'registration_number' => $registration_number, 
+					'plot_size' => $plot_size,
+					'plot_type' => $plot_type,
+					'security_code' => $security_code,
 					'name' => $name,
 					'cnic' => $cnic,
 					'contact' => $contact,
@@ -161,11 +166,16 @@ class OpenForm extends CI_Controller {
 					'status' => $status
 				);
 				$this->OpenFile_model->edit_open_file($file_id,$update_arr);
-				$target_dir = MEDIA_PATH;
-				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['logo_image']['name']);
+				$qr_exists = $this->OpenFile_model->chk_qrcode_file($file_id);
+				$target_dir = 'intimation_letter/';
+				if($qr_exists){
+					$new_image_name = $qr_exists->security_code;
+				} else {
+					$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['logo_image']['name']);
+				}
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
-				$config['allowed_types'] = 'jpg|png|jpeg';
+				$config['allowed_types'] = 'jpg';
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
 				if($this->upload->do_upload('logo_image'))
@@ -188,13 +198,13 @@ class OpenForm extends CI_Controller {
 	}
 
 	public function file_check($str){
-		$allowed_mime_type_arr = array('image/jpeg','image/pjpeg','image/png','image/x-png');
+		$allowed_mime_type_arr = array('image/jpg');
 		$mime = get_mime_by_extension($_FILES['logo_image']['name']);
 		if(isset($_FILES['logo_image']['name']) && $_FILES['logo_image']['name']!=""){
 			if(in_array($mime, $allowed_mime_type_arr)){
 				return true;
 			}else{
-				$this->form_validation->set_message('file_check', 'Please select only jpg/png file.');
+				$this->form_validation->set_message('file_check', 'Please select only jpg file.');
 				return false;
 			}
 		}else{
@@ -207,7 +217,7 @@ class OpenForm extends CI_Controller {
 	{
 		$logo = $this->OpenFile_model->get_open_file(base64_decode($this->uri->segment(5)));
 		if(!empty($logo)){
-			@unlink(MEDIA_PATH.$logo->profile_photo);
+			@unlink('intimation_letter/'.$logo->profile_photo);
 		}
 		$this->OpenFile_model->delete_open_file($this->uri->segment(5));
 		$this->session->set_userdata('message_success','Open File Deleted Successfully!');
@@ -224,5 +234,41 @@ class OpenForm extends CI_Controller {
 		$this->OpenFile_model->edit_open_file($file_id,$updt_arr);
 		$this->session->set_userdata('message_success','Open File Status Change Successfully!');
 		echo $this->session->userdata('message_success');
+	}
+
+	public function generate_qrcode(){
+		include('sdks/QR/phpqrcode/qrlib.php'); 
+		$generate_code = '1';
+		$qr_image_path = './resource/images/qrcode_images/';
+		for($generate_code; $generate_code <=500; $generate_code++){
+			$filename = 'EV-PVT-OP-00'.$generate_code;
+			if (!is_dir('resource/images/qrcode_images/'.$filename)) {
+				mkdir('./resource/images/qrcode_images/' . $filename, 0777, TRUE);
+			
+			}
+			$codeContents = base_url().'intimation_letter/'.$filename.'.jpg';
+			$folder_path = $qr_image_path.$filename.'/';
+			QRcode::png($codeContents, $folder_path.''.$filename.'.png', QR_ECLEVEL_L, 5);
+			$insert_openarr = array(
+				'user_id' => $this->userId, 
+				'dated' => date('Y-m-d H:i:s')
+			);
+			$file_id = $this->OpenFile_model->add_open_file($insert_openarr);
+			$insrt_arr = array('user_id' => $this->userId, 'file_id' => $file_id, 'security_code' => $filename, 'qrcode_file' => $filename.'.png', 'dated' => date('Y-m-d H:i:s'));
+			$this->OpenFile_model->add_qrcode($insrt_arr);
+		}
+	}
+
+	public function open_file(){
+		if(!empty($this->uri->segment(2))){
+			$fileName = basename($this->uri->segment(2));
+			$filePath = 'resource/images/qr_download_files/'.$fileName;
+			if(!empty($fileName) && file_exists($filePath)){
+				echo $filePath;
+				exit;
+			}else{
+				echo 'The File '.$fileName.' does not exist.';
+			}
+		}
 	}
 }

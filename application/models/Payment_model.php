@@ -9,6 +9,9 @@ class Payment_model extends CI_Model {
 		if($this->session->userdata('paymentsearch') != ''){
 			$this->db->like('plan_title',$this->session->userdata('paymentsearch'));
 		}
+		if($limit!=''){
+			$this->db->limit($limit, $start);
+		}
 		$query = $this->db->get();
 		if($query->num_rows() > 0){
 			return $query->result();

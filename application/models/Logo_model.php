@@ -9,6 +9,9 @@ class Logo_model extends CI_Model {
 		if($this->session->userdata('logosearch') != ''){
 			$this->db->like('website_name',$this->session->userdata('logosearch'));
 		}
+		if($limit!=''){
+			$this->db->limit($limit, $start);
+		}
 		$query = $this->db->get();
 		if($query->num_rows() > 0){
 			return $query->result();

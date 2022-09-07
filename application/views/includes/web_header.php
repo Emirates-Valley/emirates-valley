@@ -42,19 +42,26 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
-
-      <h1 class="logo"><a href="index.html">Emirates Valley</a></h1>
+<?php 
+$logo=json_decode(get_active_logo(),true);
+//echo "<pre>";print_r($logo);
+$logo_active='1661450111android-chrome-192x192.png';
+foreach($logo as $vals){
+$logo_active=$vals['logo_image'];
+}
+?>
+      <h1 class="logo"><img class="logo" src="<?php echo base_url()?>resource/images/other_images/<?php echo $logo_active; ?>"><a href="https://localhost/emirates-valley/"> Emirates Valley</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Projects</a></li>
-          <li><a class="nav-link scrollto" href="#services">Payment Plan</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Features</a></li>
-          <li><a class="nav-link scrollto" href="#team">Latest News</a></li>
-          <li class="dropdown"><a href="#"><span>Smart Villas</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto active" href="<?php echo base_url()?>">Home</a></li>
+          <li><a class="nav-link scrollto" href="about_us">Acout Us</a></li>
+          <li><a class="nav-link scrollto" href="#hero">Payment Plan</a></li>
+          <li><a class="nav-link scrollto " href="#services">Features</a></li>
+          <li><a class="nav-link scrollto" href="latest_news">Latest News</a></li>
+         <!--  <li class="dropdown"><a href="#"><span>Smart Villas</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
@@ -70,8 +77,8 @@
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          </li> -->
+          <li><a class="nav-link scrollto" href="contact_us">Contact</a></li>
           <li><a class="getstarted scrollto" href="#about">Booking</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

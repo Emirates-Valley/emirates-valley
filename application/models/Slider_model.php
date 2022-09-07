@@ -9,6 +9,9 @@ class Slider_model extends CI_Model {
 		if($this->session->userdata('slidersearch') != ''){
 			$this->db->like('title',$this->session->userdata('slidersearch'));
 		}
+		if($limit!=''){
+			$this->db->limit($limit, $start);
+		}
 		$query = $this->db->get();
 		if($query->num_rows() > 0){
 			return $query->result();

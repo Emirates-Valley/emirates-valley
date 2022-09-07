@@ -9,6 +9,9 @@ class News_model extends CI_Model {
 		if($this->session->userdata('newssearch') != ''){
 			$this->db->like('news_title',$this->session->userdata('newssearch'));
 		}
+		if($limit!=''){
+			$this->db->limit($limit, $start);
+		}
 		$query = $this->db->get();
 		if($query->num_rows() > 0){
 			return $query->result();

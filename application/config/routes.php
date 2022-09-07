@@ -50,6 +50,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'Web_Home';
+$route['latest_news'] = 'Web_Home/news_listing_home';
+$route['features'] = 'Web_Home/features_detials';
+$route['contact_us'] = 'Web_Home/contact_us';
+$route['news_details'] = 'Web_Home/news_details';
+$route['about_us'] = 'Web_Home/about_us';
 
 /*****************ADMIN AREA START*************************/
 $route['admin/login'] = 'home/login';
@@ -132,7 +137,12 @@ $route['admin/open/file/(:num)'] = 'OpenForm';
 $route['admin/open/file/add'] = 'OpenForm/open_form_add';
 $route['admin/open/file/edit/(:any)'] = 'OpenForm/open_form_edit';
 $route['admin/open/file/delete/(:any)'] = 'OpenForm/delete_open_file';
-/*****************OPEN FORM MANAGEMENT START*************************/
+/*****************OPEN FORM MANAGEMENT END*************************/
+
+/*****************QR CODE MANAGEMENT START*************************/
+$route['admin/generate-qrcode'] = 'OpenForm/generate_qrcode';
+$route['open-file/(:any)'] = 'OpenForm/open_file';
+/*****************QR CODE MANAGEMENT END*************************/
 
 /*****************DEALER AREA START*************************/
 $route['admin/dealer/listing'] = 'Dealer';

@@ -41,7 +41,7 @@ class Team extends CI_Controller {
 		$config["base_url"] = base_url()."admin/team/listing";
 		$config["total_rows"] = $total_rows;
         $config["per_page"] = 25;
-        $config["uri_segment"] = 3;
+        $config["uri_segment"] = 4;
         $config['full_tag_open'] = "<ul class='pagination'>";
 	    $config['full_tag_close'] = '</ul>';
 	    $config['num_tag_open'] = '<li class="page-item page-link">';
@@ -65,7 +65,7 @@ class Team extends CI_Controller {
 
         $this->pagination->initialize($config);
 
-        $page = $this->uri->segment(3);
+        $page = $this->uri->segment(4);
 
         $data["links"] = $this->pagination->create_links();
 		$data['teams'] = $this->Team_model->team_listing($config["per_page"], $page);

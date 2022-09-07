@@ -12,6 +12,9 @@ class Testimonial_model extends CI_Model {
 				$this->db->like('designation',$this->session->userdata('testimonialsearch'));
 			$this->db->group_end();
 		}
+		if($limit!=''){
+			$this->db->limit($limit, $start);
+		}
 		$query = $this->db->get();
 		if($query->num_rows() > 0){
 			return $query->result();

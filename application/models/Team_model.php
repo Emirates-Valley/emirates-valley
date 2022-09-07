@@ -14,6 +14,9 @@ class Team_model extends CI_Model {
 				$this->db->or_like('phone',$this->session->userdata('teamsearch'));
 			$this->db->group_end();		
 		}
+		if($limit!=''){
+			$this->db->limit($limit, $start);
+		}
 		$query = $this->db->get();
 		if($query->num_rows() > 0){
 			return $query->result();

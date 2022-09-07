@@ -66,3 +66,26 @@ if(!function_exists('get_active_dealers')){
         return $CI->global_function_model->get_active_dealers();
     }
 }
+
+if(!function_exists('get_active_gallery')){
+    function get_active_gallery(){
+        $CI = & get_instance();
+        $CI->load->model('global_function_model');
+        return $CI->global_function_model->get_active_gallery();
+    }
+}
+
+if(!function_exists('get_active_news')){
+    function get_active_news(){
+        $CI = & get_instance();
+        $CI->load->model('global_function_model');
+        return $CI->global_function_model->get_active_news();
+    }
+}
+if(!function_exists('get_active_logo')){
+    function get_active_logo(){
+        $CI = & get_instance();
+        $CI->load->model('global_function_model');
+        return $CI->global_function_model->get_active_logo();
+    }
+}
