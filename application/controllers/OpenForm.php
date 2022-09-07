@@ -246,7 +246,7 @@ class OpenForm extends CI_Controller {
 				mkdir('./resource/images/qrcode_images/' . $filename, 0777, TRUE);
 			
 			}
-			$codeContents = base_url().'intimation_letter/'.$filename.'.jpg';
+			$codeContents = base_url().'emirates-valley/intimation_letter/'.$filename.'.jpg';
 			$folder_path = $qr_image_path.$filename.'/';
 			QRcode::png($codeContents, $folder_path.''.$filename.'.png', QR_ECLEVEL_L, 5);
 			$insert_openarr = array(
