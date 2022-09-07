@@ -240,7 +240,7 @@ class OpenForm extends CI_Controller {
 		include('sdks/QR/phpqrcode/qrlib.php'); 
 		$generate_code = '1';
 		$qr_image_path = './resource/images/qrcode_images/';
-		for($generate_code; $generate_code <=500; $generate_code++){
+		for($generate_code; $generate_code <=1000; $generate_code++){
 			$filename = 'EV-PVT-OP-00'.$generate_code;
 			if (!is_dir('resource/images/qrcode_images/'.$filename)) {
 				mkdir('./resource/images/qrcode_images/' . $filename, 0777, TRUE);
