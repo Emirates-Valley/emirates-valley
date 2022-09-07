@@ -157,6 +157,8 @@ $route['homeslider'] = 'Home_Slider';
 $route['homefeatures'] = 'Home_Features';
 $route['hometestimonial'] = 'Home_Testimonial';
 $route['hometeam'] = 'Home_Team';
+$route['homegallery'] = 'Home_gallery';
+$route['homenews'] = 'Home_news';
 
 
 $route['404_override'] = '';

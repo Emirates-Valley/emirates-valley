@@ -62,7 +62,11 @@ class Global_function_model extends CI_Model {
 		}		
 	}
 
+<<<<<<< HEAD
+		public function get_active_dealers()
+=======
 	public function get_active_dealers()
+>>>>>>> remotes/origin/main
 	{
 		$this->db->select('*');
 		$this->db->from('emiratesvalley_dealers');
@@ -74,6 +78,10 @@ class Global_function_model extends CI_Model {
 			return $query->result();
 		}		
 	}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> remotes/origin/main
 
 	public function get_active_gallery()
 	{
@@ -112,5 +120,10 @@ class Global_function_model extends CI_Model {
 			return json_encode($query->result());
 		}		
 	}
+<<<<<<< HEAD
 
+=======
+=======
+>>>>>>> remotes/origin/main
+>>>>>>> remotes/origin/main
 }

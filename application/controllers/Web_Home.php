@@ -30,4 +30,42 @@ class Web_Home extends CI_Controller {
 		$data['web_main_content'] = 'web/index';
         $this->load->view('includes/web_template', $data);
 	}
+	public function news_listing_home()
+	{
+		$data['web_main_content'] = 'web/latest_news';
+        $this->load->view('includes/web_template', $data);
+		
+	}
+	public function features_detials()
+	{
+		$data['web_main_content'] = 'web/features';
+        $this->load->view('includes/web_template', $data);
+		
+	}
+	public function contact_us()
+	{
+		$data['web_main_content'] = 'web/contact_us';
+        $this->load->view('includes/web_template', $data);
+		
+	}
+	public function news_details()
+	{
+		$data['web_main_content'] = 'web/news_details';
+        $this->load->view('includes/web_template', $data);
+		
+	}
+	public function about_us()
+	{
+		$data['web_main_content'] = 'web/about_us';
+        $this->load->view('includes/web_template', $data);
+		
+	}
+
+	public function privacy_policy()
+	{
+		$data['web_main_content'] = 'web/about_us';
+        $this->load->view('includes/web_template', $data);
+		
+	}
+
 }

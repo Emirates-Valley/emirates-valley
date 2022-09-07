@@ -59,12 +59,22 @@ if(!function_exists('home_team')){
     }
 }
 
+<<<<<<< HEAD
+}
+
+=======
+>>>>>>> remotes/origin/main
 if(!function_exists('get_active_dealers')){
     function get_active_dealers(){
         $CI = & get_instance();
         $CI->load->model('global_function_model');
         return $CI->global_function_model->get_active_dealers();
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+>>>>>>> remotes/origin/main
 }
 
 if(!function_exists('get_active_gallery')){
@@ -73,6 +83,10 @@ if(!function_exists('get_active_gallery')){
         $CI->load->model('global_function_model');
         return $CI->global_function_model->get_active_gallery();
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> remotes/origin/main
 }
 
 if(!function_exists('get_active_news')){
@@ -81,6 +95,10 @@ if(!function_exists('get_active_news')){
         $CI->load->model('global_function_model');
         return $CI->global_function_model->get_active_news();
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> remotes/origin/main
 }
 if(!function_exists('get_active_logo')){
     function get_active_logo(){
@@ -88,4 +106,10 @@ if(!function_exists('get_active_logo')){
         $CI->load->model('global_function_model');
         return $CI->global_function_model->get_active_logo();
     }
+<<<<<<< HEAD
 }
+=======
+=======
+>>>>>>> remotes/origin/main
+}
+>>>>>>> remotes/origin/main
