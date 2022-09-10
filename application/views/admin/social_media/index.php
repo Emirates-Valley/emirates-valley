@@ -48,7 +48,12 @@
                                                 <label>Linkedin</label>
                                                 <input type="text" class="form-control" value="<?php echo ($social_media->linkedin)?$social_media->linkedin:set_value('linkedin')?>" name="linkedin">
                                             </div>
-                                            <?php echo form_error('linkedin', '<div class="alert alert-danger">', '</div>'); ?>    
+                                            <?php echo form_error('linkedin', '<div class="alert alert-danger">', '</div>'); ?>
+                                            <div class="form-group">
+                                                <label>Youtube</label>
+                                                <input type="text" class="form-control" value="<?php echo ($social_media->youtube)?$social_media->youtube:set_value('youtube')?>" name="youtube">
+                                            </div>
+                                            <?php echo form_error('youtube', '<div class="alert alert-danger">', '</div>'); ?>    
                                         </div>
                                     </div>
                                     <br />

@@ -40,8 +40,9 @@ class SocialMedia extends CI_Controller {
 			$this->form_validation->set_rules('twitter', 'Twitter', 'trim|required');
 			$this->form_validation->set_rules('instagram', 'Instagram', 'trim|required');
 			$this->form_validation->set_rules('linkedin', 'Linkedin', 'trim|required');
+			$this->form_validation->set_rules('youtube', 'Youtube', 'trim|required');
 			if($this->form_validation->run() != FALSE){
-				$social_arr = array('facebook' => $facebook, 'twitter' => $twitter, 'instagram' => $instagram, 'linkedin' => $linkedin);
+				$social_arr = array('facebook' => $facebook, 'twitter' => $twitter, 'instagram' => $instagram, 'linkedin' => $linkedin, 'youtube' => $youtube);
 				if($social_medias != ''){
 					$this->SocialMedia_model->edit_socialmedia($social_medias->social_id,$social_arr);
 					$this->session->set_userdata('message_success','Social Media Added Successfully!');
