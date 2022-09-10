@@ -172,6 +172,9 @@
                             <li>
                                 <a href="<?php echo base_url().'admin/about'?>"><i class="fa fa-info-circle"></i>&nbsp;About Management</a>
                             </li>
+                            <li>
+                                <a href="<?php echo base_url().'admin/social-media'?>"><i class="fa fa fa-instagram"></i>&nbsp;Social Media Setting</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>    

@@ -152,6 +152,10 @@ $route['admin/dealer/edit/(:any)'] = 'Dealer/edit_dealer';
 $route['admin/dealer/delete/(:any)'] = 'Dealer/delete_dealer';
 /*****************DEALER AREA END**************************/
 
+/*****************SOCIAL MEDIA START*************************/
+$route['admin/social-media'] = 'SocialMedia';
+/*****************SOCIAL MEDIA END**************************/
+
 /*****************Home Slider **************************/
 $route['homeslider'] = 'Home_Slider';
 $route['homefeatures'] = 'Home_Features';
