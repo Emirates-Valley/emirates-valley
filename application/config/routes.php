@@ -152,6 +152,14 @@ $route['admin/dealer/edit/(:any)'] = 'Dealer/edit_dealer';
 $route['admin/dealer/delete/(:any)'] = 'Dealer/delete_dealer';
 /*****************DEALER AREA END**************************/
 
+/*****************NOC/DOWNLOAD AREA START*************************/
+$route['admin/noc/listing'] = 'Noc';
+$route['admin/noc/listing/(:num)'] = 'Noc';
+$route['admin/noc/add'] = 'Noc/add_noc';
+$route['admin/noc/edit/(:any)'] = 'Noc/edit_noc';
+$route['admin/noc/delete/(:any)'] = 'Noc/delete_noc';
+/*****************NOC/DOWNLOAD AREA END**************************/
+
 /*****************SOCIAL MEDIA START*************************/
 $route['admin/social-media'] = 'SocialMedia';
 /*****************SOCIAL MEDIA END**************************/

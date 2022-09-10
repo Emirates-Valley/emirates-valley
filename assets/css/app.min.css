@@ -5921,7 +5921,7 @@ body:not(.horizontal-navigation) .navigation .navigation-menu-body ul li > a {
   align-items: center;
   padding: 12px 30px;
   color: rgba(255, 255, 255, 0.85);
-  font-size: 15px;
+  font-size: 12px;
 }
 
 body:not(.horizontal-navigation) .navigation .navigation-menu-body ul li > a .nav-link-icon {
