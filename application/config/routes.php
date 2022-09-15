@@ -53,9 +53,12 @@ $route['default_controller'] = 'Web_Home';
 $route['latest_news'] = 'Web_Home/news_listing_home';
 $route['features'] = 'Web_Home/features_detials';
 $route['contact_us'] = 'Web_Home/contact_us';
-$route['news_details'] = 'Web_Home/news_details';
+$route['detail/(:any)'] = 'Web_Home/news_details';
 $route['about_us'] = 'Web_Home/about_us';
-
+$route['payment_plan'] = 'Web_Home/payment_plan';
+$route['privacy_policy'] = 'Web_Home/privacy_policy';
+$route['profile-detail/(:any)'] = 'Web_Home/about_profile';
+$route['latest_development'] = 'Web_Home/gallery';
 /*****************ADMIN AREA START*************************/
 $route['admin/login'] = 'home/login';
 $route['admin/logout'] = 'home/logout';
@@ -171,7 +174,7 @@ $route['hometestimonial'] = 'Home_Testimonial';
 $route['hometeam'] = 'Home_Team';
 $route['homegallery'] = 'Home_gallery';
 $route['homenews'] = 'Home_news';
-
+$route['homenews'] = 'Home_news';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

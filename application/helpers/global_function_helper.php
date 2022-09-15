@@ -89,3 +89,18 @@ if(!function_exists('get_active_logo')){
         return $CI->global_function_model->get_active_logo();
     }
 }
+if(!function_exists('get_active_payment_plan')){
+    function get_active_payment_plan(){
+        $CI = & get_instance();
+        $CI->load->model('global_function_model');
+        return $CI->global_function_model->get_active_payment_plan();
+    }
+}
+
+if(!function_exists('get_social_media')){
+    function get_social_media(){
+        $CI = & get_instance();
+        $CI->load->model('global_function_model');
+        return $CI->global_function_model->get_social_media();
+    }
+}

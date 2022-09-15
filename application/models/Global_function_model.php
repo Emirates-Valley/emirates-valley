@@ -112,4 +112,26 @@ class Global_function_model extends CI_Model {
 			return json_encode($query->result());
 		}		
 	}
+		public function get_active_payment_plan()
+	{
+		$this->db->select('*');
+		$this->db->from('emiratesvalley_payment_plan');
+		$this->db->where('status', 'Active');
+		$this->db->order_by("plan_id", "DESC");
+		$query = $this->db->get();
+		if($query->num_rows() > 0){
+
+			return json_encode($query->result());
+		}		
+	}
+	public function get_social_media()
+	{
+		$this->db->select('*');
+		$this->db->from('emiratesvalley_social_media');
+		$query = $this->db->get();
+		if($query->num_rows() > 0){
+
+			return json_encode($query->result());
+		}		
+	}
 }

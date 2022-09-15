@@ -22,6 +22,7 @@ class Web_Home extends CI_Controller {
 	public function __construct() 
 	{
         parent::__construct();
+		$this->load->model('Web_Home_model');
         error_reporting(0);
     }
 
@@ -50,6 +51,8 @@ class Web_Home extends CI_Controller {
 	}
 	public function news_details()
 	{
+		$news_id = end(explode('-',$this->uri->segment(2)));
+		$data['news'] = $this->Web_Home_model->get_news($news_id);
 		$data['web_main_content'] = 'web/news_details';
         $this->load->view('includes/web_template', $data);
 		
@@ -63,9 +66,34 @@ class Web_Home extends CI_Controller {
 
 	public function privacy_policy()
 	{
-		$data['web_main_content'] = 'web/about_us';
+		$data['web_main_content'] = 'web/privacy_policy';
         $this->load->view('includes/web_template', $data);
 		
 	}
+	
+		public function payment_plan()
+	{
+		$data['web_main_content'] = 'web/payment_plan';
+        $this->load->view('includes/web_template', $data);
+		
+	}
+
+	public function about_profile()
+	{
+		$team_id = end(explode('-',$this->uri->segment(2)));
+		$data['team'] = $this->Web_Home_model->get_team($team_id);
+		$data['web_main_content'] = 'web/about_profile';
+        $this->load->view('includes/web_template', $data);
+		
+	}
+	
+	public function gallery()
+	{
+		$data['web_main_content'] = 'web/gallery';
+        $this->load->view('includes/web_template', $data);
+		
+	}
+	
+	
 
 }

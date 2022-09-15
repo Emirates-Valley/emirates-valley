@@ -43,7 +43,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="https://localhost/emirates-valley/">Emirates Valley</a></h1>
+      <h1 class="logo"><img class="logo" src="<?php echo base_url()?>resource/images/other_images/<?php echo $logo_active; ?>"><a href="<?php echo base_url()?>"> Emirates Valley</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -51,8 +51,8 @@
         <ul>
           <li><a class="nav-link scrollto active" href="<?php echo base_url()?>">Home</a></li>
           <li><a class="nav-link scrollto" href="about_us">Acout Us</a></li>
-          <li><a class="nav-link scrollto" href="#hero">Payment Plan</a></li>
-          <li><a class="nav-link scrollto " href="#services">Features</a></li>
+          <li><a class="nav-link scrollto" href="payment_plan">Payment Plan</a></li>
+          <li><a class="nav-link scrollto " href="features">Features</a></li>
           <li><a class="nav-link scrollto" href="latest_news">Latest News</a></li>
           <li class="dropdown"><a href="#"><span>Smart Villas</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

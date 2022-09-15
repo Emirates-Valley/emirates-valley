@@ -29,45 +29,68 @@
               </div>
 
               <h2 class="entry-title">
-                <a href="blog-single.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
+                <a href="blog-single.html">Emirates Valley Features</a>
               </h2>
 
               <div class="entry-content">
                 <p>
-                  Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                  Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
+                  Society will be equipped will all the facilities required for modern urban living according to international standards. Major facilities and monuments shall be developed at the front side after main gate entrance. Water filtration plant for clean drinking water, Underground electrification, sewerage system, wide carpeted roads with solar street lights, Gas, Internet and cable services shall be available to residents. Wide Streets of minimum width of 50 feet and Main Boulevard of 120 feet are planned and designed keeping in view the traffic requirement of the society
                 </p>
 
                 <p>
-                  Sit repellat hic cupiditate hic ut nemo. Quis nihil sunt non reiciendis. Sequi in accusamus harum vel aspernatur. Excepturi numquam nihil cumque odio. Et voluptate cupiditate.
+                 <b style="color:#d81f27">London Bridge Entrance:</b> 
+A new of its style, main entrance of the project is decorated with London Bridge style monument and a lake which enhance the beauty of this urban hood.
+
                 </p>
                 <p>
-                  Sed quo laboriosam qui architecto. Occaecati repellendus omnis dicta inventore tempore provident voluptas mollitia aliquid. Id repellendus quia. Asperiores nihil magni dicta est suscipit perspiciatis. Voluptate ex rerum assumenda dolores nihil quaerat.
-                  Dolor porro tempora et quibusdam voluptas. Beatae aut at ad qui tempore corrupti velit quisquam rerum. Omnis dolorum exercitationem harum qui qui blanditiis neque.
-                  Iusto autem itaque. Repudiandae hic quae aspernatur ea neque qui. Architecto voluptatem magni. Vel magnam quod et tempora deleniti error rerum nihil tempora.
-                </p>
+                <b style="color:#d81f27">Gated Community:</b> 
+Due to safety and security situation of our country, we have decided to safeguard our residents by building a boundary wall around this project will fool proof security management system aided by CCTVs, Security patrolling staff and vehicles. 
 
-                <ul class="ps-0">
-                  <li>Water, Gas, and Electricity Provision</li>
-                  <li>Safe Drinking Water</li>
-                  <li>Adequate Waste Disposal System</li>
-                  <li>Parks and Grounds for Recreational Activities.</li>
-                  <li>High-class Education System</li>
-                  <li>Advanced Health Care Units</li>
-                  <li>Grand Mosque</li>
-                  <li>Graveyard</li>
-                  <li>Safari Zoo</li>
-                  <li>Police Station</li>
-                  <li>Water Theme Park</li>
-                  <li>Foolproof Security System</li>
-                  <li>Grid Station</li>
-                  <li>3D Cinemas</li>
-                  <li>80,100,120 Feet Carpeted Road</li>
-                  <li>Commercial Area</li>
-                  <li>Entertainment Hub</li>
-                  <li>Shopping Facilities like Malls and Grocery shops</li>
-                  <li>Gated Community</li>
-                  </ul>
+                </p>
+<p><b style="color:#d81f27">Emirates Mall:</b>
+A multipurpose unique styled multi storied residential and shopping Mall will enhance the commercial and business activity of this area and add value to the investors’ confidence.
+</p>
+<p><b style="color:#d81f27">Dubai style Commercial Area:</b>
+This projects will provide numerous opportunities for its investors and residents.  A well planned and modern commercial area will be available keeping in view the potential of trade and commerce in the area due to proximity of CPEC route.
+</p>
+<p><b style="color:#d81f27">Emirates Educational complex:</b>
+Quality education is in demand in Pakistan and we will cater to the needs of our resident by providing them world class leaning centers. This complex will include Schools, College and state of the art world class University.
+</p>
+<p><b style="color:#d81f27">Emirates Healthcare and Allied Facilities:</b>
+We are aware of the fact that our country lacks international standard health facilities. To fill this vacuum we have planned to build a world class hospital and allied facilities including laboratories and fitness centers.
+</p>
+<p><b style="color:#d81f27">Emirates Theme Park: </b>
+A healthy environment is a key to peaceful living. Area of this project is surrounded by a natural park and mountains. Residents of our project will have a ready access to parks and recreational activities. 
+</p>
+<p><b style="color:#d81f27">Other Facilities includes the following:</b></p>
+              <ul class="ps-0">
+                 <li>Emirates 7 Star Hotel</li>
+                <li>Grand Central Mosque</li>
+                <li>Emirates Food Court</li>
+                <li>Museum</li>
+                <li>Library and IT Center</li>
+                <li>International Brands Chain Restaurants (MacDonald's& KFC)</li>
+                <li>Sports Complex and Gymnasium</li>
+                <li>Emirates Small Economic Zone</li>
+                <li>Emirates Emergency Service Area</li>
+                <li>Emirates Villas & Resorts</li>
+                <li>Emirates Farm Houses</li>
+                <li>Emirates Apartments </li>
+                <li>Dubai Style Commercial Aria</li>
+                <li>Emirates Wedding Hall</li>
+                <li>Emirates Citizens Community Center</li>
+                <li>Emirates Helipad</li>
+                <li>Emirates Transport Services & Stations</li>
+                <li>Emirates Solar System (Street Lights)</li>
+                <li>Emirates Zoo & Botanical Garden</li>
+                <li>Emirates Fish, Dairy and Poultry Market</li>
+                <li>Central Graveyard</li>
+                <li>Emirates Elite Citizen Club</li>
+                <li>Emirates Water Filtration System</li>
+                <li>Emirates Sunday Bazar</li>
+                <li>Emirates Cineplex </li>
+            </ul>
+
                 
 
               </div>
@@ -87,79 +110,4 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>MULTI</h3>
-              <p>A108 Adam Street<br>
-                New York, NY 535022<br>
-                United States</p>
-                <br>
-              <p>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
-             
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-newsletter">
-            <h4>Our Social Networks</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div>
-            <!-- <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form> -->
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Emirates Valley</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/multi-responsive-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">2022</a>
-      </div>
-    </div>
- 
+  

@@ -21,7 +21,7 @@
 					<div class="wrapper">
 						<div class="row no-gutters">
               <div class="col-lg-5 col-md-5 d-flex align-items-stretch">
-								<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.424931291815!2d73.10546171435145!3d33.51633598075516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfed5f2503b3d1%3A0x6fc09b1de8b27982!2sBlue%20World%20city%20rawalpindi!5e0!3m2!1sen!2s!4v1662193249907!5m2!1sen!2s" width="600" height="470" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1174.5502426476698!2d72.91565847602159!3d33.62787719428795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1663007237128!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 							</div>
 							<div class="col-lg-7 col-md-7 order-md-last d-flex align-items-stretch">
 								<div class="contact-wrap w-100 p-md-5 p-4">
@@ -77,7 +77,7 @@
                     <i class="bi bi-geo-alt-fill"></i>
                   </div>
                   <div class="text ps-3">
-                    <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                    <p><span>Address:</span> House number 1054, Main Double Road, G-16/3, Islamabad</p>
                   </div>
                 </div>
                 
@@ -91,7 +91,8 @@
                     <i class="bi bi-telephone-fill"></i>
                   </div>
                   <div class="text ps-3">
-                    <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                    <p><span>Phone:</span> <a href="tel://051-2761065-7">051-2761065-7</a></p>
+                     <p><span>UAN:</span> <a href="tel://051111-101010">(051)111-101-010</a></p>
                   </div>
                 </div>
                
@@ -105,7 +106,7 @@
                     <i class="bi bi-envelope-fill"></i>
                   </div>
                   <div class="text ps-3">
-                    <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                    <p><span>Email:</span> <a href="mailto:info@emiratesvalley.com">info@emiratesvalley.com</a></p>
                   </div>
                 </div>
                 

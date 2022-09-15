@@ -50,17 +50,18 @@ foreach($logo as $vals){
 $logo_active=$vals['logo_image'];
 }
 ?>
-      <h1 class="logo"><img class="logo" src="<?php echo base_url()?>resource/images/other_images/<?php echo $logo_active; ?>"><a href="https://localhost/emirates-valley/"> Emirates Valley</a></h1>
+      <h1 class="logo"><a href="<?php echo base_url()?>"><img class="logo" src="<?php echo base_url()?>resource/images/other_images/<?php echo $logo_active; ?>" style="max-height: 55px;"></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="<?php echo base_url()?>">Home</a></li>
-          <li><a class="nav-link scrollto" href="about_us">Acout Us</a></li>
-          <li><a class="nav-link scrollto" href="#hero">Payment Plan</a></li>
+          <li><a class="nav-link scrollto" href="about_us">About Us</a></li>
+          <li><a class="nav-link scrollto" href="payment_plan">Payment Plan</a></li>
           <li><a class="nav-link scrollto " href="#services">Features</a></li>
           <li><a class="nav-link scrollto" href="latest_news">Latest News</a></li>
+          <li><a class="nav-link scrollto" href="latest_development">Latest Development</a></li>
          <!--  <li class="dropdown"><a href="#"><span>Smart Villas</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -79,7 +80,7 @@ $logo_active=$vals['logo_image'];
             </ul>
           </li> -->
           <li><a class="nav-link scrollto" href="contact_us">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Booking</a></li>
+          <li><a class="getstarted scrollto" href="contact_us">Booking</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
