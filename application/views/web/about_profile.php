@@ -27,7 +27,7 @@
                                     <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Name:</span> <?php echo $team->name;?></li>
                                     <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Position:</span> <?php echo $team->designation;?></li>
                                     <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Email:</span> <?php echo $team->email;?></li>
-                                    <li class="display-28"><span class="display-26 text-secondary me-2 font-weight-600">Phone:</span> <?php echo $team->phone;?></li>
+                                    <li class="display-28"><span class="display-26 text-secondary me-2 font-weight-600">Phone:</span> 051-2761065-7</li>
                                 </ul>
                                 <ul class="social-icon-style1 list-unstyled mb-0 ps-0">
                                     <li><a href="#!"><i class="ti-twitter-alt"></i></a></li>
