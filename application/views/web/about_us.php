@@ -47,7 +47,7 @@ foreach($team as $vals){
               <img src="<?php echo base_url()?>resource/images/other_images/<?php echo $vals['team_image'];?>" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4><?php echo $vals['name'];?></h4>
+                  <h4><a href="<?php echo base_url().'profile-detail/'.title_slug($vals['name']).'-'.$vals['team_id']?>"><?php echo $vals['name'];?></a></h4>
                   <span><?php echo $vals['designation'];?></span>
                 </div>
                 <div class="social">
