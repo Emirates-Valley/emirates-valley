@@ -107,7 +107,7 @@
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-right">
                                                                 <a class="dropdown-item" href="<?php echo base_url().'admin/open/file/edit/'.base64_encode($openfile->file_id)?>">Update Open File</a>
-                                                                <a class="dropdown-item" href="<?php echo base_url().'admin/open/file/delete/'.base64_encode($openfile->file_id)?>">Delete Open File</a>
+                                                                <?php /* ?><a class="dropdown-item" href="<?php echo base_url().'admin/open/file/delete/'.base64_encode($openfile->file_id)?>">Delete Open File</a><?php */ ?>
                                                             </div>
                                                         </div>
                                                     </td>

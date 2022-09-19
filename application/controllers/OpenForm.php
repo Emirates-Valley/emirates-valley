@@ -92,10 +92,10 @@ class OpenForm extends CI_Controller {
 			$this->form_validation->set_rules('plot_size', 'Plot Size', 'trim|required');
 			$this->form_validation->set_rules('plot_type', 'Plot Type', 'trim|required');
 			$this->form_validation->set_rules('security_code', 'Security Code', 'trim|required');
-			$this->form_validation->set_rules('name', 'Name', 'trim|required');
-			$this->form_validation->set_rules('cnic', 'CNIC', 'trim|required');
-			$this->form_validation->set_rules('contact', 'Contact', 'trim|required');
-			$this->form_validation->set_rules('address', 'Address', 'trim|required');
+			// $this->form_validation->set_rules('name', 'Name', 'trim|required');
+			// $this->form_validation->set_rules('cnic', 'CNIC', 'trim|required');
+			// $this->form_validation->set_rules('contact', 'Contact', 'trim|required');
+			// $this->form_validation->set_rules('address', 'Address', 'trim|required');
 			$this->form_validation->set_rules('logo_image', 'Image', 'callback_file_check');
 			if($this->form_validation->run() != FALSE){
 				$insert_arr = array(
@@ -118,7 +118,7 @@ class OpenForm extends CI_Controller {
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['logo_image']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
-				$config['allowed_types'] = 'jpg';
+				$config['allowed_types'] = 'jpg|jpeg';
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
 				if($this->upload->do_upload('logo_image'))
@@ -144,10 +144,15 @@ class OpenForm extends CI_Controller {
 		if($this->input->post('open_form_edit') == 'open_form_edit'){
 			extract($_POST);
 			$this->form_validation->set_rules('dealer_id', 'Dealer', 'trim|required');
-			$this->form_validation->set_rules('name', 'Name', 'trim|required');
-			$this->form_validation->set_rules('cnic', 'CNIC', 'trim|required');
-			$this->form_validation->set_rules('contact', 'Contact', 'trim|required');
-			$this->form_validation->set_rules('address', 'Address', 'trim|required');
+			$this->form_validation->set_rules('app_form_number', 'App. Form Number', 'trim|required');
+			$this->form_validation->set_rules('registration_number', 'Registration Number', 'trim|required');
+			$this->form_validation->set_rules('plot_size', 'Plot Size', 'trim|required');
+			$this->form_validation->set_rules('plot_type', 'Plot Type', 'trim|required');
+			$this->form_validation->set_rules('security_code', 'Security Code', 'trim|required');
+			// $this->form_validation->set_rules('name', 'Name', 'trim|required');
+			// $this->form_validation->set_rules('cnic', 'CNIC', 'trim|required');
+			// $this->form_validation->set_rules('contact', 'Contact', 'trim|required');
+			// $this->form_validation->set_rules('address', 'Address', 'trim|required');
 			if(isset($_FILES['logo_image']['name']) && $_FILES['logo_image']['name']!=""){
 				$this->form_validation->set_rules('logo_image', 'Image', 'callback_file_check');
 			}
@@ -175,7 +180,7 @@ class OpenForm extends CI_Controller {
 				}
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
-				$config['allowed_types'] = 'jpg';
+				$config['allowed_types'] = 'jpg|jpeg';
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
 				if($this->upload->do_upload('logo_image'))
@@ -198,7 +203,7 @@ class OpenForm extends CI_Controller {
 	}
 
 	public function file_check($str){
-		$allowed_mime_type_arr = array('image/jpg');
+		$allowed_mime_type_arr = array('image/jpg','image/jpeg');
 		$mime = get_mime_by_extension($_FILES['logo_image']['name']);
 		if(isset($_FILES['logo_image']['name']) && $_FILES['logo_image']['name']!=""){
 			if(in_array($mime, $allowed_mime_type_arr)){
@@ -230,7 +235,18 @@ class OpenForm extends CI_Controller {
 			exit('No direct script access allowed!');
 		}
 		$file_id = $this->input->post('file_id');
+		$logo = $this->OpenFile_model->get_open_file($file_id);
 		$updt_arr = array('status' => $this->input->post('status'));
+		if(!empty($logo) && $logo->profile_photo != ''){
+			$open_file_name = explode('.',$logo->profile_photo);
+			if($this->input->post('status') == 'Inactive'){
+				$new_open_file_name = $open_file_name[0].'_inactive.'.$open_file_name[1];
+			} else if($this->input->post('status') == 'Active'){
+				$new_open_file_name = explode('_',$open_file_name[0])[0].'.'.$open_file_name[1];
+			}
+			rename("intimation_letter/".$logo->profile_photo,"intimation_letter/".$new_open_file_name);
+			$updt_arr['profile_photo'] = $new_open_file_name;
+		}
 		$this->OpenFile_model->edit_open_file($file_id,$updt_arr);
 		$this->session->set_userdata('message_success','Open File Status Change Successfully!');
 		echo $this->session->userdata('message_success');

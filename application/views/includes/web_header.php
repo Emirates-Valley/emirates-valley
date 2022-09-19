@@ -6,8 +6,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Emirates Valley</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Due to Increase in demand for new housing units in the country, Emirates Valley (Pvt) Limited planned to build a world class housing project." name="description">
+  <meta content="Emirates Valley,Emirates valley housing society,Emirates valley booking,Emirates valley plot rates,Emirates valley islamabad,Emirates valley housing project" name="keywords">
 
   <!-- Favicons -->
   <link href="<?php echo base_url()?>assets/web/assets/img/favicon.png" rel="icon">
@@ -50,18 +50,16 @@ foreach($logo as $vals){
 $logo_active=$vals['logo_image'];
 }
 ?>
-      <h1 class="logo"><a href="<?php echo base_url()?>"><img class="logo" src="<?php echo base_url()?>resource/images/other_images/<?php echo $logo_active; ?>" style="max-height: 55px;"></a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <h1 class="logo"><a href="<?php echo base_url()?>"><img class="logo" src="<?php echo base_url()?>resource/images/other_images/<?php echo $logo_active; ?>" alt="Emirates Valley"></a></h1>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="<?php echo base_url()?>">Home</a></li>
-          <li><a class="nav-link scrollto" href="about_us">About Us</a></li>
-          <li><a class="nav-link scrollto" href="payment_plan">Payment Plan</a></li>
+          <li><a class="nav-link scrollto" href="<?php echo base_url()?>about-us">About Us</a></li>
+          <li><a class="nav-link scrollto" href="<?php echo base_url()?>payment-plan">Payment Plan</a></li>
           <li><a class="nav-link scrollto " href="#services">Features</a></li>
-          <li><a class="nav-link scrollto" href="latest_news">Latest News</a></li>
-          <li><a class="nav-link scrollto" href="latest_development">Latest Development</a></li>
+          <li><a class="nav-link scrollto" href="<?php echo base_url()?>latest-news">Latest News</a></li>
+          <li><a class="nav-link scrollto" href="<?php echo base_url()?>latest-development">Latest Development</a></li>
          <!--  <li class="dropdown"><a href="#"><span>Smart Villas</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -79,8 +77,9 @@ $logo_active=$vals['logo_image'];
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li> -->
-          <li><a class="nav-link scrollto" href="contact_us">Contact</a></li>
-          <li><a class="getstarted scrollto" href="contact_us">Booking</a></li>
+          <li><a class="nav-link scrollto" href="<?php echo base_url()?>contact-us">Contact</a></li>
+          <li><a class="getstarted scrollto" href="<?php echo base_url()?>contact-us">Booking</a></li>
+          <li><a class="getstarted scrollto" href="#" style="background: #D4AF37;">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

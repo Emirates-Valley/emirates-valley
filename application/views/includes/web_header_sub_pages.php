@@ -50,29 +50,15 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="<?php echo base_url()?>">Home</a></li>
-          <li><a class="nav-link scrollto" href="about_us">Acout Us</a></li>
-          <li><a class="nav-link scrollto" href="payment_plan">Payment Plan</a></li>
-          <li><a class="nav-link scrollto " href="features">Features</a></li>
-          <li><a class="nav-link scrollto" href="latest_news">Latest News</a></li>
-          <li class="dropdown"><a href="#"><span>Smart Villas</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="contact_us">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Booking</a></li>
+          <li><a class="nav-link scrollto" href="<?php echo base_url()?>about-us">Acout Us</a></li>
+          <li><a class="nav-link scrollto" href="<?php echo base_url()?>payment-plan">Payment Plan</a></li>
+          <li><a class="nav-link scrollto " href="<?php echo base_url()?>features">Features</a></li>
+          <li><a class="nav-link scrollto" href="<?php echo base_url()?>latest-news">Latest News</a></li>
+          <li><a class="nav-link scrollto" href="<?php echo base_url()?>latest-development">Latest Development</a></li>
+          
+          <li><a class="nav-link scrollto" href="<?php echo base_url()?>contact-us">Contact</a></li>
+          <li><a class="getstarted scrollto" href="<?php echo base_url()?>contact-us">Booking</a></li>
+          <li><a class="getstarted scrollto" href="#" style="background: #D4AF37;">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

@@ -43,7 +43,7 @@
             <div class="col-lg-12 mb-4 mb-sm-5">
                 <div>
                     <h4 class="text-secondary me-2 mb-3 font-weight-600 text-uppercase">About Me</h4>
-                    <p><?php echo $team->descriptions;?></p>
+            <p><?php echo nl2br(htmlentities($team->descriptions));?></p>
                 </div>
             </div>
            

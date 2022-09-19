@@ -96,7 +96,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Profile Image</label>
+                                                <label>Open File</label>
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" id="customFile" name="logo_image">
                                                     <label class="custom-file-label" for="customFile">Choose file</label>

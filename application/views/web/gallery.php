@@ -27,7 +27,7 @@ foreach($active_gallery as $vals){
           <div class="col-lg-3 col-md-6 portfolio-item filter-app">
             <img src="<?php echo base_url()?>resource/images/other_images/<?php echo $vals['video_file'];?>" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <a href="<?php echo base_url()?>resource/images/other_images/<?php echo $vals['video_file'];?>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bi bi-zoom-in"></i></a>
+              <a href="<?php echo base_url()?>resource/images/other_images/<?php echo $vals['video_file'];?>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="<?php echo $vals['title'];?>"><i class="bi bi-zoom-in"></i></a>
             </div>
           </div>
 

@@ -45,6 +45,42 @@ class Web_Home extends CI_Controller {
 	}
 	public function contact_us()
 	{
+		if($this->input->post('contact-us') == 'Send Message'){
+			$name = $this->input->post('name');
+			$email = $this->input->post('email');
+			$subject = $this->input->post('subject');
+			$message = $this->input->post('message');
+			$config = array(
+				'protocol' => 'smtp', // 'mail', 'sendmail', or 'smtp'
+				'smtp_host' => 'smtp.emiratesvalley.com',
+				'smtp_port' => 465,
+				'smtp_user' => 'info@emiratesvalley.com',
+				'smtp_pass' => '',
+				'smtp_crypto' => 'ssl', //can be 'ssl' or 'tls' for example
+				'mailtype' => 'text', //plaintext 'text' mails or 'html'
+				'smtp_timeout' => '4', //in seconds
+				'charset' => 'iso-8859-1',
+				'wordwrap' => TRUE
+			);
+			$from = $config['smtp_user'];
+			$to = strtolower($email);
+			$bodyMessage = '<p>Hi '.$name.',</p>';
+			$bodyMessage .= '<p>'.$message.'</p>';
+			$this->email->set_newline("\r\n");
+			$this->email->set_mailtype("html");
+			$this->email->from($from);
+			$this->email->to($to);
+			$this->email->subject($subject);
+			$this->email->message($bodyMessage);
+			$email_sent = $this->email->send();
+			if($email_sent){
+				$contact_arr = array('name' => $name, 'email' => $email, 'subject' => $subject, 'message' => $message, 'ip_address' => $this->input->ip_address(), 'dated' => date('Y-m-d H:i:s'));
+				$this->db->insert('emiratesvalley_contact_us',$contact_arr);
+				$data['SUCCESSMSG'] = 'Message successfully send!';
+				$this->session->set_userdata($data);
+				redirect('contact-us');
+			}
+		}
 		$data['web_main_content'] = 'web/contact_us';
         $this->load->view('includes/web_template', $data);
 		

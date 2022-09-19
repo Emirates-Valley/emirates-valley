@@ -44,7 +44,7 @@ foreach($team as $vals){
 ?>
           <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="member aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-              <img src="<?php echo base_url()?>resource/images/other_images/<?php echo $vals['team_image'];?>" class="img-fluid" alt="">
+              <img src="<?php echo base_url()?>resource/images/other_images/<?php echo $vals['team_image'];?>" class="img-fluid" alt="<?php echo $vals['name'];?>">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4><a href="<?php echo base_url().'profile-detail/'.title_slug($vals['name']).'-'.$vals['team_id']?>"><?php echo $vals['name'];?></a></h4>

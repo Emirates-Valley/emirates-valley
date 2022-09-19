@@ -50,15 +50,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'Web_Home';
-$route['latest_news'] = 'Web_Home/news_listing_home';
+$route['latest-news'] = 'Web_Home/news_listing_home';
 $route['features'] = 'Web_Home/features_detials';
-$route['contact_us'] = 'Web_Home/contact_us';
+$route['contact-us'] = 'Web_Home/contact_us';
 $route['detail/(:any)'] = 'Web_Home/news_details';
-$route['about_us'] = 'Web_Home/about_us';
-$route['payment_plan'] = 'Web_Home/payment_plan';
-$route['privacy_policy'] = 'Web_Home/privacy_policy';
+$route['about-us'] = 'Web_Home/about_us';
+$route['payment-plan'] = 'Web_Home/payment_plan';
+$route['privacy-policy'] = 'Web_Home/privacy_policy';
 $route['profile-detail/(:any)'] = 'Web_Home/about_profile';
-$route['latest_development'] = 'Web_Home/gallery';
+$route['latest-development'] = 'Web_Home/gallery';
 /*****************ADMIN AREA START*************************/
 $route['admin/login'] = 'home/login';
 $route['admin/logout'] = 'home/logout';
