@@ -118,7 +118,7 @@ class OpenForm extends CI_Controller {
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['logo_image']['name']);
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
-				$config['allowed_types'] = 'jpg|jpeg';
+				$config['allowed_types'] = 'jpg';
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
 				if($this->upload->do_upload('logo_image'))
@@ -180,7 +180,7 @@ class OpenForm extends CI_Controller {
 				}
 				$config['file_name'] = $new_image_name;
 				$config['upload_path'] = $target_dir;
-				$config['allowed_types'] = 'jpg|jpeg';
+				$config['allowed_types'] = 'jpg';
 				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
 				if($this->upload->do_upload('logo_image'))
@@ -203,7 +203,7 @@ class OpenForm extends CI_Controller {
 	}
 
 	public function file_check($str){
-		$allowed_mime_type_arr = array('image/jpg','image/jpeg');
+		$allowed_mime_type_arr = array('image/jpg');
 		$mime = get_mime_by_extension($_FILES['logo_image']['name']);
 		if(isset($_FILES['logo_image']['name']) && $_FILES['logo_image']['name']!=""){
 			if(in_array($mime, $allowed_mime_type_arr)){
