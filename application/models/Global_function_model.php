@@ -134,4 +134,10 @@ class Global_function_model extends CI_Model {
 			return json_encode($query->result());
 		}		
 	}
+	public function count_website_visitors(){
+		$insrtArr = array('counter' => '1', 'ip_address' => $this->input->ip_address(), 'dated' => date('Y-m-d H:i:s'));
+		$this->db->insert('emiratesvalley_visit_counter',$insrtArr);
+        //$daily_visitors = $this->db->select('count(counter_id) as daily_counts')->from('emiratesvalley_visit_counter')->where('dated',date('Y-m-d'))->get()->row()->counter;
+        //return $daily_visitors;
+    }
 }

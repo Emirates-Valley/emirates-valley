@@ -104,3 +104,10 @@ if(!function_exists('get_social_media')){
         return $CI->global_function_model->get_social_media();
     }
 }
+if(!function_exists('count_website_visitors')){
+    function count_website_visitors(){
+        $CI = & get_instance();
+        $CI->load->model('global_function_model');
+        return $CI->global_function_model->count_website_visitors();
+    }
+}
