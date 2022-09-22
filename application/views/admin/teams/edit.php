@@ -51,7 +51,12 @@
                                                     <option value="Active" <?php echo ($team->status == 'Active' ? 'selected="selected"':'');?>>Active</option>
                                                     <option value="Inactive" <?php echo ($team->status == 'Inactive' ? 'selected="selected"':'');?>>Inactive</option>
                                                 </select>
-                                            </div>    
+                                            </div> 
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <textarea class="form-control" name="descriptions" id="editor"><?php echo $team->descriptions?></textarea>
+                                            </div>
+                                            <?php echo form_error('descriptions', '<div class="alert alert-danger">', '</div>'); ?>   
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">

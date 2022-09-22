@@ -90,9 +90,10 @@ class Team extends CI_Controller {
 			$this->form_validation->set_rules('designation', 'Designation', 'trim|required');
 			$this->form_validation->set_rules('phone', 'Phone', 'trim|callback_phone_exists|min_length[8]|max_length[15]');
 			$this->form_validation->set_rules('email', 'Email', 'trim|callback_email_exists');
+			$this->form_validation->set_rules('descriptions', 'Description', 'trim|required');
 			$this->form_validation->set_rules('team_image', 'Image', 'callback_file_check');
 			if($this->form_validation->run() != FALSE){
-				$insert_arr = array('user_id' => $this->userId,'name' => $name, 'designation' => $designation, 'phone' => $phone, 'email' => $email, 'status' => $status, 'dated' => date('Y-m-d H:i:s'));
+				$insert_arr = array('user_id' => $this->userId,'name' => $name, 'designation' => $designation, 'descriptions' => $descriptions, 'phone' => $phone, 'email' => $email, 'status' => $status, 'dated' => date('Y-m-d H:i:s'));
 				$team_id = $this->Team_model->add_team($insert_arr);
 				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['team_image']['name']);
@@ -130,11 +131,12 @@ class Team extends CI_Controller {
 			$this->form_validation->set_rules('designation', 'Designation', 'trim|required');
 			$this->form_validation->set_rules('phone', 'Phone', 'trim|callback_phone_exists|min_length[8]|max_length[15]');
 			$this->form_validation->set_rules('email', 'Email', 'trim|callback_email_exists');
+			$this->form_validation->set_rules('descriptions', 'Description', 'trim|required');
 			if(isset($_FILES['team_image']['name']) && $_FILES['team_image']['name']!=""){
 				$this->form_validation->set_rules('team_image', 'Image', 'callback_file_check');
 			}
 			if($this->form_validation->run() != FALSE){
-				$update_arr = array('name' => $name, 'designation' => $designation, 'phone' => $phone, 'email' => $email, 'status' => $status);
+				$update_arr = array('name' => $name, 'designation' => $designation, 'descriptions' => $descriptions, 'phone' => $phone, 'email' => $email, 'status' => $status);
 				$this->Team_model->edit_team($team_id,$update_arr);
 				$target_dir = MEDIA_PATH;
 				$new_image_name = time() . str_replace(str_split(' ()\\/,:*?"<>|'), '', $_FILES['team_image']['name']);
